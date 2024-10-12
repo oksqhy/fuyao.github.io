@@ -1,37 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-cs">
 
-<style>
-    body {
-        font-family: 'Roboto', sans-serif;
-    }
-    #home {
-        position: relative;
-        background: url('img/background.webp') no-repeat center center;
-        background-size: cover;
-    }
-    #home::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.8); /* 半透明黑色 */
-        z-index: 1;
-    }
-    .content {
-        position: relative;
-        z-index: 2; /* 确保内容在黑色覆盖层之上 */
-    }
-    .white-box {
-        background: rgba(255, 255, 255, 0.8); /* 半透明白色 */
-        border-radius: 20px; /* 较大的圆角 */
-        padding: 30px; /* 增加内边距 */
-    }
-</style>
-
-
 <head>
     <meta charset="utf-8">
     <title>符瑶Koritsu应援站</title>
@@ -43,7 +12,7 @@
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
@@ -55,36 +24,81 @@
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
 
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
 
-  <!-- Header Start -->
-  <div class="container-fluid bg-primary d-flex align-items-center mb-5 py-5" id="home" style="min-height: 100vh;">
-    <div class="container content">
-        <div class="row align-items-center">
-            <div class="col-lg-5 px-5 pl-lg-0 pb-5 pb-lg-0">
-                <img class="img-fluid w-100 rounded-circle shadow-sm" src="img/fuyaoicon.jpg" alt="">
-            </div>
-            <div class="col-lg-7 text-center text-lg-left">
-                <div class="white-box">
-                    <h3 class="text-dark font-weight-normal mb-3">宇宙无敌第一可爱的男娘虚拟主播</h3>
-                    <h1 class="display-3 text-uppercase text-primary mb-2">符瑶Koritsu</h1>
-                    <h1 class="typed-text-output d-inline font-weight-lighter text-dark"></h1>
-                    <h5 class="text-dark font-weight-normal mb-3">关注符瑶烤栗子喵！关注符瑶烤栗子谢谢喵！</h5>
-                    <div class="d-flex align-items-center justify-content-center pt-5">
-                        <a href="https://space.bilibili.com/2109776/" class="btn btn-outline-primary mx-2">
-                            <i class="fab fa-bilibili"></i> Bilibili
-                        </a>
-                        <a href="https://t.me/fuyaokoritsu/" class="btn btn-outline-primary mx-2">
-                            <i class="fab fa-telegram-plane"></i> TG频道(非官方)
-                        </a>
-                    </div>
-                    
+        #home {
+            position: relative;
+            background: url('img/background.webp') no-repeat center center;
+            background-size: cover;
+            min-height: 100vh;
+        }
+
+        #home::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8); /* 半透明黑色 */
+            z-index: 1;
+        }
+
+        .content {
+            position: relative;
+            z-index: 2; /* 确保内容在黑色覆盖层之上 */
+        }
+
+        .white-box {
+            background: rgba(255, 255, 255, 0.8); /* 半透明白色 */
+            border-radius: 20px; /* 较大的圆角 */
+            padding: 30px; /* 增加内边距 */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* 按钮样式 */
+        .btn {
+            margin: 0 10px;
+        }
+    </style>
+
+    <!-- CSP 设置 -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline';">
+</head>
+
+<body>
+    <!-- Header Start -->
+    <div class="container-fluid bg-primary d-flex align-items-center mb-5 py-5" id="home">
+        <div class="container content">
+            <div class="row align-items-center">
+                <div class="col-lg-5 px-5 pl-lg-0 pb-5 pb-lg-0">
+                    <img class="img-fluid w-100 rounded-circle shadow-sm" src="img/fuyaoicon.jpg" alt="">
+                </div>
+                <div class="col-lg-7 text-center text-lg-left">
+                    <div class="white-box">
+                        <h3 class="text-dark font-weight-normal mb-3">宇宙无敌第一可爱的男娘虚拟主播</h3>
+                        <h1 class="display-3 text-uppercase text-primary mb-2">符瑶Koritsu</h1>
+                        <h1 class="typed-text-output d-inline font-weight-lighter text-dark"></h1>
+                        <h5 class=class="text-dark font-weight-normal mb-3">
+                            <div>关注符瑶烤栗子喵！关注符瑶烤栗子谢谢喵！</div>
+                        </h5>
+                        <div class="d-flex align-items-center justify-content-center pt-5">
+                            <a href="https://space.bilibili.com/2109776/" class="btn btn-outline-primary">
+                                Bilibili
+                            </a>
+                            <a href="https://t.me/fuyaokoritsu/" class="btn btn-outline-primary">
+                               TG频道(非官方)
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<!-- Header End -->
+    <!-- Header End -->
 
     <!-- About Start -->
     <div class="container-fluid py-5" id="About">
