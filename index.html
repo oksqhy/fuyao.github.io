@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-cs">
+
+<style>
+    body {
+        font-family: 'Roboto', sans-serif;
+    }
+    #home {
+        position: relative;
+        background: url('img/background.webp') no-repeat center center;
+        background-size: cover;
+    }
+    #home::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8); /* 半透明黑色 */
+        z-index: 1;
+    }
+    .content {
+        position: relative;
+        z-index: 2; /* 确保内容在黑色覆盖层之上 */
+    }
+    .white-box {
+        background: rgba(255, 255, 255, 0.8); /* 半透明白色 */
+        border-radius: 20px; /* 较大的圆角 */
+        padding: 30px; /* 增加内边距 */
+    }
+</style>
+
+
+<head>
+    <meta charset="utf-8">
+    <title>符瑶Koritsu应援站</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="符瑶Koritsu应援站" name="keywords">
+    <meta content="符瑶Koritsu应援站" name="description">
+
+    <!-- Favicon -->
+    <link href="img/fuyaoicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet"> 
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+
+  <!-- Header Start -->
+  <div class="container-fluid bg-primary d-flex align-items-center mb-5 py-5" id="home" style="min-height: 100vh;">
+    <div class="container content">
+        <div class="row align-items-center">
+            <div class="col-lg-5 px-5 pl-lg-0 pb-5 pb-lg-0">
+                <img class="img-fluid w-100 rounded-circle shadow-sm" src="img/fuyaoicon.jpg" alt="">
+            </div>
+            <div class="col-lg-7 text-center text-lg-left">
+                <div class="white-box">
+                    <h5 class="text-dark font-weight-normal mb-3">宇宙无敌第一可爱的男娘虚拟主播</h5>
+                    <h1 class="display-3 text-uppercase text-primary mb-2">符瑶Koritsu</h1>
+                    <h1 class="typed-text-output d-inline font-weight-lighter text-dark"></h1>
+                    <div class="typed-text d-none">关注符瑶烤栗子喵！, 关注符瑶烤栗子谢谢喵！</div>
+                    <div class="d-flex align-items-center justify-content-center pt-5">
+                        <a href="https://space.bilibili.com/2109776/" class="btn btn-outline-primary mx-2">
+                            <i class="fab fa-bilibili"></i> Bilibili
+                        </a>
+                        <a href="https://t.me/fuyaokoritsu/" class="btn btn-outline-primary mx-2">
+                            <i class="fab fa-telegram-plane"></i> TG频道(非官方)
+                        </a>
+                    </div>
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Header End -->
+
+    <!-- About Start -->
+    <div class="container-fluid py-5" id="About">
+        <div class="container">
+            <div class="position-relative d-flex align-items-center justify-content-center">
+                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">关于</h1>
+                <h1 class="position-absolute text-uppercase text-primary">关于</h1>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-5 pb-4 pb-lg-0">
+                    <img class="img-fluid rounded w-100" src="img/fuyao.webp" alt="">
+                </div>
+                <div class="col-lg-7">
+                    <h3 class="mb-4">符瑶Koritsu</h3>
+                    <p>直译符瑶孤独，音译符瑶烤栗子。出生年月未知，自称28岁。目前是全职Vup，主要在Bilibili活动，特点是独特的中性嗓音。在直播中通常会稍微夹一下下，使得大部分第一次看符瑶直播的人都会以为他是女孩子。</p>
+                    <p>生理性别男，心理性别男，性取向女。</p>
+                    <p>给自己的定位是游戏男V。经常用像女孩子一样的声音卖萌。</p>
+                    <p>粉丝牌是"符导员"（导导你的）。粉丝们对符瑶的常见称呼有：符符、符宝、瑶瑶、猪咪、符猪……</p>
+                    <p>兴趣爱好是出女装cosplay， 高光时刻是去BW出的11号，身高不高（据说一米六几）加上超级还原的cos服和道具，一度被当成官方coser。</p>
+                    <a href="https://zh.moegirl.org.cn/zh-hans/%E7%AC%A6%E7%91%B6koritsu" class="btn btn-outline-primary mr-4">萌娘百科</a>
+                    <a href="https://368326.xyz/archives/fuyao" class="btn btn-outline-primary mr-4">深入了解符瑶</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-primary text-white px-sm-3 ">
+        <div class="container text-center py-5">
+            <a>符瑶Koritsu应援站，由符导员创建。本站所有内容不代表符瑶Koritsu本人立场。</a>
+            <p class="m-0">&copy; <a class="text-white font-weight-bold" href="368326.xyz">Hechima的后花园</a>  
+            </p>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/typed/typed.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="mail/jqBootstrapValidation.min.js"></script>
+    <script src="mail/contact.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
