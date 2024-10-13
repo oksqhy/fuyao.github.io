@@ -13,13 +13,9 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v3  
 
-    - name: Pull latest changes
-      run: git pull  
-
     - name: Get Bilibili Stats
       run: |
-        curl -s "https://api.bilibili.com/x/web-interface/card?mid=2109776" > bilibili-stats.json
-       
+        curl -s "https://api.bilibili.com/x/web-interface/card?mid=2109776" | jq '{fans: .data.card.fans, name: .data.card.name, face: .data.card.face}' > bilibili-stats.json
 
     - name: Commit and Push Bilibili Stats
       env:
