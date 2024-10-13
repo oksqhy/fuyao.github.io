@@ -9983,34 +9983,6 @@ h6,
   list-style-type: none;
 }
 
-.milk-effect {
-  position: relative; /* 使内部元素绝对定位相对于这个容器 */
-  overflow: hidden; /* 隐藏超出部分 */
-}
-
-.dynamic-border {
-  display: inline-block;
-  border-radius: 50%; /* 保持圆形 */
-  padding: 10px; /* 调整外框的宽度 */
-  background-color: rgba(255, 255, 255, 0.3); /* 半透明白色背景 */
-}
-
-
-
-/* 动画效果 */
-@keyframes flow {
-  0% {
-      top: -50px; /* 从上方开始 */
-      opacity: 1; /* 开始时完全不透明 */
-  }
-  50% {
-      opacity: 0.8; /* 流动过程中稍微透明 */
-  }
-  100% {
-      top: 80px; /* 流动到头像底部 */
-      opacity: 0; /* 最后逐渐消失 */
-  }
-}
 
 .custom-gallery {
   background-color: #483674;
@@ -10096,5 +10068,50 @@ h6,
 
 .custom-gallery .gallery .block:not(:nth-child(5)) {
   margin-right: 1em;
+}
+
+.bilibili-fan {
+  text-align: center;
+  margin-top: 20px;
+  position: relative; /* 使得子元素绝对定位相对于此元素 */
+  overflow: hidden; /* 防止子元素超出边界 */
+}
+
+.bilibili-fan .background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.75); /* 半透明白色 */
+  border-radius: 15px; /* 大一点的圆角 */
+  z-index: -1; /* 放在文字的后面 */
+  transition: background-color 0.3s ease; /* 背景颜色过渡效果 */
+}
+
+.bilibili-fan:hover .background {
+  background-color: rgba(255, 255, 255, 1); /* 悬停时更改背景颜色 */
+}
+
+.bilibili-fan .label {
+  font-size: 20px; 
+  font-weight: 700; 
+  color: black; 
+  transition: transform 0.3s ease; 
+  margin-top: 14px;
+}
+
+.bilibili-fan .count {
+  font-size: 48px; 
+  font-weight: bold; 
+  color: #493573; 
+  animation: countAnimation 0.3s ease; 
+}
+
+.bilibili-fan .notice{
+  font-size: 14px; 
+  font-weight: 400; 
+  color: gray; 
+  margin-bottom: 14px;
 }
 
