@@ -6,9 +6,10 @@
     <title>符瑶Koritsu应援站</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="符瑶Koritsu应援站" name="keywords">
+    
 
     <!-- Favicon -->
-    <link href="https://fuyao.github.io/favicon.ico" rel="icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -85,9 +86,21 @@
                         <h3 class="text-dark font-weight-normal mb-3">宇宙无敌第一可爱的男娘虚拟主播</h3>
                         <h1 class="display-3 text-uppercase text-primary mb-2">符瑶Koritsu</h1>
                         <h1 class="typed-text-output d-inline font-weight-lighter text-dark"></h1>
-                        <h5 class=class="text-dark font-weight-normal mb-3">
-                            <div>关注符瑶烤栗子喵！关注符瑶烤栗子谢谢喵！</div>
-                        </h5>
+                        <div class="bilibili-stats-container">
+                            <div class="bilibili-stats">
+                                <div class="bilibili-fans">
+                                    <span class="bilibili-label">B站粉丝</span>
+                                    <span class="bilibili-number" id="bilibili-fans">加载中...</span>
+                                </div>
+                                <div class="bilibili-views">
+                                    <span class="bilibili-label">视频播放量</span>
+                                    <span class="bilibili-number" id="bilibili-views">加载中...</span>
+                                </div>
+                                <script src="bilibili-stats.js"></script>
+
+                            </div>
+                        </div>
+
                         <div class="d-flex align-items-center justify-content-center pt-5">
                             <a href="https://space.bilibili.com/2109776/" class="btn btn-outline-primary">
                                 Bilibili

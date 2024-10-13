@@ -10098,4 +10098,67 @@ h6,
   margin-right: 1em;
 }
 
+/* 父容器样式 */
+.bilibili-stats-container {
+  text-align: center;
+  padding: 20px;
+  background-color: #f0f0f0;
+}
+
+/* 标题样式 */
+.title {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* 粉丝数和播放量的父容器 */
+.bilibili-stats {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+
+/* 标签样式 */
+.bilibili-label {
+  font-size: 24px;
+  color: #666;
+}
+
+/* 数字样式 */
+.bilibili-number {
+  font-size: 48px;
+  font-weight: bold;
+  color: #333;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* 悬停效果 */
+.bilibili-number:hover {
+  transform: scale(1.1);
+  color: #7b61ff;
+}
+
+/* 动画效果 */
+@keyframes bilibiliNumberAnimation {
+  0% {
+    transform: scale(1);
+    color: #333;
+  }
+  50% {
+    transform: scale(1.2);
+    color: #7b61ff;
+  }
+  100% {
+    transform: scale(1);
+    color: #333;
+  }
+}
+
+.bilibili-fans .bilibili-number, 
+.bilibili-views .bilibili-number {
+  animation: bilibiliNumberAnimation 2s infinite alternate;
+}
+
 
