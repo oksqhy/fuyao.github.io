@@ -1,5 +1,5 @@
 // Fetch the Bilibili stats JSON file and update the numbers
-fetch('https://fuyao.github.io/bilibili-stats.json')
+fetch('https://oksqhy.github.io/fuyao.github.io/bilibili-stats.json')
   .then(response => response.json())
   .then(data => {
     const fansCount = data.data.card.fans;  
