@@ -87,21 +87,31 @@
                         <h3 class="text-dark font-weight-normal mb-3">宇宙无敌第一可爱的男娘虚拟主播</h3>
                         <h1 class="display-3 text-uppercase text-primary mb-2">符瑶Koritsu</h1>
                         <h1 class="typed-text-output d-inline font-weight-lighter text-dark"></h1>
-                        <div class="bilibili-stats-container">
-                            <div class="bilibili-stats">
-                                <div class="bilibili-fans">
-                                    <span class="bilibili-label">B站粉丝</span>
-                                    <span class="bilibili-number" id="bilibili-fans">加载中...</span>
-                                </div>
-                                <div class="bilibili-views">
-                                    <span class="bilibili-label">视频播放量</span>
-                                    <span class="bilibili-number" id="bilibili-views">加载中...</span>
-                                </div>
-                                <script src="/bilibili-stats.js"></script>
-                                <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self' https://oksqhy.github.io; style-src 'self' 'unsafe-inline'; font-src 'self';">
-
-                            </div>
-                        </div>
+                        
+                        <div id="bilibili-fans">
+                            <p>当前 B站 粉丝数: <span id="fans-count">加载中...</span></p>
+                        </div>                        
+                        
+                        <script>
+                            async function fetchFansCount() {
+                                try {
+                                    const response = await fetch('https://oksqhhy.github.io/fuyao.github.io/bilibili-stats.json'); // 替换为您的用户名
+                                    if (!response.ok) {
+                                        throw new Error(`HTTP error! status: ${response.status}`);
+                                    }
+                                    const data = await response.json();
+                                    const fansCount = data.data.card.follower; // 提取粉丝数
+                                    document.getElementById('fans-count').innerText = fansCount; // 显示粉丝数
+                                } catch (error) {
+                                    console.error('获取 B站 粉丝数失败:', error);
+                                    document.getElementById('fans-count').innerText = '获取失败';
+                                }
+                            }
+                        
+                            fetchFansCount();
+                        </script>
+                        
+                        
 
                         <div class="d-flex align-items-center justify-content-center pt-5">
                             <a href="https://space.bilibili.com/2109776/" class="btn btn-outline-primary">
