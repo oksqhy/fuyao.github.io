@@ -1,5 +1,5 @@
 // 使用 fetch 获取 JSON 文件
-fetch('https://oksqhy.github.io/fuyao.github.io/bilibili-stats.json')
+fetch('./bilibili-stats.json')
   .then(response => {
     if (!response.ok) {
       throw new Error('Network response was not ok');
