@@ -34,7 +34,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.8); /* 半透明黑色 */
+            background: rgba(0, 0, 0, 0.75); /* 半透明黑色 */
             z-index: 1;
         }
 
@@ -53,12 +53,7 @@
         /* 按钮样式 */
         .btn {
             margin: 0 10px;
-        }
-
-        
-
-
-        
+        } 
 
     </style>
     
@@ -69,19 +64,26 @@
 </head>
 
 <body>
-    <!-- Header Start -->
+    <header>
+        <div class="header-content">
+            <a href="https://xnn.fuyao.moe" target="_blank"> 
+                <img src="img/fuyaologo.webp" alt="Logo" class="logo">
+            </a>
+            <h1 style="color: rgb(255, 255, 255); font-weight:300; font-size: 24px; margin: 0;">符瑶烤栗子 ☁ 烧烤摊</h1>
+        </div>
+    </header>
+    
     <div class="container-fluid bg-primary d-flex align-items-center mb-5 py-5" id="home">
         <div class="container content">
             <div class="row align-items-center">
-                <div class="col-lg-5 px-5 pl-lg-0 pb-5 pb-lg-0">
+                <div class="col-lg-5 px-5 pl-lg-0 pb-5 pb-lg-0" style="margin-top: 20px;">
                     <img class="img-fluid w-100 rounded-circle shadow-sm" src="img/fuyaoicon.jpg" alt="">
                 </div>
                 <div class="col-lg-7 text-center text-lg-left">
                     <div class="white-box">
-                        <h3 class="text-dark text-center font-weight-normal mb-3">宇宙无敌第一可爱的男娘虚拟主播</h3>
+                        <h3 class="text-dark text-center font-weight-regular mb-3">宇宙无敌第一可爱的男娘虚拟主播</h3>
                         <h1 class="display-3 text-center text-primary mb-2">符瑶Koritsu</h1>
-                        <h1 class="typed-text-output d-inline font-weight-lighter text-dark"></h1>
-                        <h5 id="dynamic-text" class="text-dark text-center font-weight-normal">
+                        <h5 id="dynamic-text" class="text-dark text-center font-weight-regular">
                             <div>关注符瑶烤栗子喵！谢谢喵！</div>
                         </h5>
                         
@@ -172,8 +174,7 @@
         
         </div>
     </div>
-    
-    <!-- Header End -->
+   
 
     <!-- About Start -->
     <div class="container-fluid py-5" id="About">
@@ -186,12 +187,12 @@
                     <img class="img-fluid rounded w-100" src="img/fuyao.webp" alt="">
                 </div>
                 <div class="col-lg-7">
-                    <h3 class="mb-4">符瑶Koritsu</h3>
-                    <p>直译符瑶孤独，音译符瑶烤栗子。出生年月未知，自称28岁。目前是全职Vup，主要在Bilibili活动，特点是独特的中性嗓音。在直播中通常会稍微夹一下下，使得大部分第一次看符瑶直播的人都会以为他是女孩子。</p>
-                    <p>生理性别男，心理性别男，性取向女。</p>
-                    <p>给自己的定位是游戏男V。经常用像女孩子一样的声音卖萌。</p>
-                    <p>粉丝牌是"符导员"（导导你的）。粉丝们对符瑶的常见称呼有：符符、符宝、瑶瑶、猪咪、符猪……</p>
-                    <p>兴趣爱好之一是出女装cosplay， 高光时刻是去BW出的11号，身高不高（据说一米六几）加上超级还原的cos服和道具，一度被当成官方coser。</p>
+                    <h3 class="mb-4 font-weight-bold">符瑶Koritsu</h3>
+                    <p class="font-weight-regular">直译符瑶孤独，音译符瑶烤栗子。出生年月未知，自称28岁。目前是全职Vup，主要在Bilibili活动，特点是独特的中性嗓音。在直播中通常会稍微夹一下下，使得大部分第一次看符瑶直播的人都会以为他是女孩子。</p>
+                    <p class="font-weight-regular">生理性别男，心理性别男，性取向女。</p>
+                    <p class="font-weight-regular">给自己的定位是游戏男V。经常用像女孩子一样的声音卖萌。</p>
+                    <p class="font-weight-regular">粉丝牌是"符导员"（导导你的）。粉丝们对符瑶的常见称呼有：符符、符宝、瑶瑶、猪咪、符猪……</p>
+                    <p class="font-weight-regular">兴趣爱好之一是出女装cosplay， 高光时刻是去BW出的11号，身高不高（据说一米六几）加上超级还原的cos服和道具，一度被当成官方coser。</p>
                     <a href="https://zh.moegirl.org.cn/zh-hans/%E7%AC%A6%E7%91%B6koritsu" class="btn btn-outline-primary mr-4">萌娘百科</a>
                     <a href="https://368326.xyz/archives/fuyao" class="btn btn-outline-primary mr-4">深入了解符瑶</a>
                 </div>
@@ -236,17 +237,16 @@
     <!-- gallery end -->
   
     <!-- Footer Start -->
-    <div class="container-fluid bg-primary text-white px-sm-3">
+    <div class="container-fluid bg-footer text-white px-sm-3">
         <div class="container text-center py-5">
-        <p> <a>符瑶Koritsu应援站，由符导员创建。本站所有内容不代表符瑶Koritsu本人立场。</a>
-        </p>
-
-        <p> <a>符瑶Koritsu的虚拟形象，以及相关插画的版权归符瑶本人和其他相关创作者所有。</a>
+        <p class="font-weight-light"> <a>符瑶Koritsu应援站，由符导员创建，内容不代表符瑶Koritsu本人立场。符瑶Koritsu的虚拟形象与插画版权归符瑶本人和其他相关创作者所有。</a>
         </p>    
-
-        <p> <a href="https://icp.gov.moe/?keyword=20240225" target="_blank" style="color: white !important;">萌ICP备20240225号</a>
-        </p>       
-            <p class="m-0">&copy; <a class="text-white font-weight-bold" href="https://368326.xyz">Hechima的后花园</a></p>
+        <p class="font-weight-light" style="display: inline; margin: 0;"> 
+            <a href="https://icp.gov.moe/?keyword=20240225" target="_blank" style="color: white !important;">萌ICP备20240225号</a>
+        </p>
+        <p class="m-0" style="display: inline; margin-left: 10px;">&copy; 
+            <a class="text-white font-weight-bold" href="https://368326.xyz">Hechima的后花园</a>
+        </p>
         </div>
     </div>
     

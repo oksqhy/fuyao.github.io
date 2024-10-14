@@ -607,6 +607,16 @@ pre code {
   margin-left: auto;
 }
 
+.container-head{
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 20px;
+}
+
+
 @media (min-width: 576px) {
   .container, .container-sm {
     max-width: 540px;
@@ -6368,6 +6378,10 @@ button.bg-primary:focus {
   background-color: #6c757d !important;
 }
 
+.bg-footer {
+  background-color: #2e224a !important;
+}
+
 a.bg-secondary:hover, a.bg-secondary:focus,
 button.bg-secondary:hover,
 button.bg-secondary:focus {
@@ -9497,6 +9511,7 @@ button.bg-dark:focus {
 }
 
 .font-weight-light {
+  font-family: 'Alibaba PuHuiTi';
   font-weight: 300 !important;
 }
 
@@ -9508,6 +9523,11 @@ button.bg-dark:focus {
   font-weight: 400 !important;
 }
 
+.font-weight-regular{
+  font-family: 'Alibaba PuHuiTi';
+  font-weight: 400 !important;
+}
+
 .font-weight-bold {
   font-weight: 700 !important;
 }
@@ -9515,6 +9535,12 @@ button.bg-dark:focus {
 .font-weight-bolder {
   font-weight: bolder !important;
 }
+
+.font-weight-heavy{
+  font-family: 'Alibaba PuHuiTi';
+  font-weight: 700 !important;
+}
+
 
 .font-italic {
   font-style: italic !important;
@@ -10094,44 +10120,71 @@ h6,
 }
 
 .bilibili-fan .label {
-  font-size: 20px; 
-  font-weight: 700; 
+  font-size: 24px; 
+  font-weight: 400; 
   color: black; 
   transition: transform 0.3s ease; 
   margin-top: 14px;
 }
 
 .bilibili-fan .count {
-  font-size: 48px; 
-  font-weight: bold; 
+  font-size: 60px; 
+  font-weight: 700; 
   color: #493573; 
   animation: countAnimation 0.3s ease; 
 }
 
 .bilibili-fan .notice{
   font-size: 14px; 
-  font-weight: 400; 
+  font-weight: 300; 
   color: gray; 
   margin-bottom: 14px;
 }
 
 @font-face {
   font-family: 'AlibabaPuHuiTi';
-  src: url('https://oksqhy.github.io/fuyao.github.io/fonts/AlibabaPuHuiTi-3-55-Regular.woff') format('woff'),
-  font-weight: Regular;
+  src: url('../fonts/AlibabaPuHuiTi-3-55-Regular.woff') format('woff'),
+  font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'AlibabaPuHuiTi';
-  src: url('https://oksqhy.github.io/fuyao.github.io/fonts/AlibabaPuHuiTi-3-105-Heavy.woff') format('woff'),
-  font-weight: Heavy;
+  src: url('../fonts/AlibabaPuHuiTi-3-105-Heavy.woff') format('woff'),
+  font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'AlibabaPuHuiTi';
-  src: url('https://oksqhy.github.io/fuyao.github.io/fonts/AlibabaPuHuiTi-3-45-Light.woff') format('woff'),
-  font-weight: light;
+  src: url('../fonts/fonts/AlibabaPuHuiTi-3-45-Light.woff') format('woff'),
+  font-weight: 300;
   font-style: normal;
 }
+
+header {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)); 
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+
+  .logo {
+    height: 100px; /* 根据需要调整 logo 大小 */
+    margin-right: 10px;
+    transition: transform 0.3s ease; /* 添加平滑的过渡效果 */
+}
+
+.logo:hover {
+    transform: scale(1.1); /* 鼠标悬停时放大图片 */
+}
+
