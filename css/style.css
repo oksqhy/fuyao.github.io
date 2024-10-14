@@ -10188,3 +10188,50 @@ header {
     transform: scale(1.1); /* 鼠标悬停时放大图片 */
 }
 
+.image-container {
+  position: relative;
+  width: 200px; /* 图片变大 */
+  height: 200px;
+  margin-left: auto; /* 图片右对齐 */
+  cursor: pointer;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 确保图片保持比例 */
+  transition: transform 0.3s ease;
+}
+
+.image-container .text-box {
+  position: absolute;
+  bottom: 10px;
+  left: -80px; /* 文本框偏左 */
+  background-color: #483674DD;
+  padding: 10px 20px; /* 加长文本框 */
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  width: 230px; /* 使文本框更长 */
+  transition: color 0.3s ease;
+}
+
+/* 划掉效果 */
+.strikethrough {
+  text-decoration: line-through;
+}
+
+/* 悬停效果 */
+.image-container:hover img {
+  transform: scale(1.1);
+}
+
+.image-container:hover .text-box {
+  color: #ff5722;
+}
+
+/* 链接样式 */
+.image-container a {
+  text-decoration: none;
+  color: inherit;
+}
