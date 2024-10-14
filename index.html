@@ -3,11 +3,12 @@
 
 <head>
     <meta charset="utf-8">
-    <title>符瑶Koritsu应援站</title>
+    <title>符瑶烤栗子 ☁ 烧烤摊</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="符瑶Koritsu应援站" name="keywords">
-
-    
+    <meta property="og:title" content="符瑶Koritsu应援站">
+    <meta property="og:description" content="香香软软的小男娘谁不爱呢？关注符瑶Koritsu喵！关注符瑶Koritsu谢谢喵！">
+    <meta name="keywords" content="符瑶, Koritsu, 符瑶Koritsu，B站, 虚拟主播, Vup, 应援, 直播, 直播应援站, 符瑶粉丝">
+    <meta property="og:type" content="website">
 
     <!-- Favicon -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
@@ -85,13 +86,52 @@
                 </div>
                 <div class="col-lg-7 text-center text-lg-left">
                     <div class="white-box">
-                        <h3 class="text-dark font-weight-normal mb-3">宇宙无敌第一可爱的男娘虚拟主播</h3>
-                        <h1 class="display-3 text-uppercase text-primary mb-2">符瑶Koritsu</h1>
+                        <h3 class="text-dark text-center font-weight-normal mb-3">宇宙无敌第一可爱的男娘虚拟主播</h3>
+                        <h1 class="display-3 text-center text-primary mb-2">符瑶Koritsu</h1>
                         <h1 class="typed-text-output d-inline font-weight-lighter text-dark"></h1>
-                        <h5 class=class="text-dark text-center font-weight-normal mb-3">
+                        <h5 id="dynamic-text" class="text-dark text-center font-weight-normal">
                             <div>关注符瑶烤栗子喵！谢谢喵！</div>
                         </h5>
-                        <div class="d-flex align-items-center justify-content-center pt-5">
+                        
+                        <style>
+                            #dynamic-text {
+                                display: flex;
+                                align-items: center; 
+                                justify-content: center; 
+                                font-style: italic; 
+                                margin-top: 30px;
+                                margin-bottom: 30px;
+                                quotes: "“" "”"; 
+                            }
+                        
+                            #dynamic-text::before {
+                                content: open-quote; 
+                            }
+                        
+                            #dynamic-text::after {
+                                content: close-quote; 
+                            }
+                        </style>
+                        
+                        <script>
+                            const messages = [
+                                "关注符瑶烤栗子喵！谢谢喵！",
+                                "才不是小男娘！",
+                                "我喜欢南梁，你喜欢北朝。",
+                                "你才是男同！",
+                                "我要去找漂亮大姐姐玩了♥",
+                                "用小皮鞭狠狠抽你♥"
+                            ];
+                        
+                            function setRandomMessage() {
+                                const randomIndex = Math.floor(Math.random() * messages.length);
+                                document.getElementById('dynamic-text').innerText = messages[randomIndex];
+                            }
+                        
+                            setRandomMessage(); 
+                        </script>
+                        
+                        <div class="d-flex align-items-center justify-content-center">
                             <a href="https://space.bilibili.com/2109776/" class="btn btn-outline-primary">
                                 Bilibili
                             </a>
