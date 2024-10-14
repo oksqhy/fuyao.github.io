@@ -10193,7 +10193,9 @@ header {
   width: 200px; /* 图片变大 */
   height: 200px;
   margin-left: auto; /* 图片右对齐 */
+  margin-top: 40px;
   cursor: pointer;
+  
 }
 
 .image-container img {
@@ -10234,4 +10236,26 @@ header {
 .image-container a {
   text-decoration: none;
   color: inherit;
+}
+
+.fy-button {
+  display: inline-block; /* 自适应宽度 */
+  padding: 10px 20px; /* 内边距使按钮内容不会紧贴边缘 */
+  background-color: #483674; /* 按钮背景色 */
+  color: #fff; /* 按钮文字颜色 */
+  font-size: 16px;
+  font-weight: bold;
+  border: none; /* 去掉默认边框 */
+  cursor: pointer; /* 鼠标变为手势 */
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-decoration: none; /* 移除链接下划线 */
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.fy-button:hover {
+  background-color: #372a55; /* 悬停时按钮背景色变深 */
+  color: #ff5722; /* 悬停时按钮文字颜色变化 */
 }
