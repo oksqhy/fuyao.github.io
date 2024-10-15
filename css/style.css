@@ -9510,6 +9510,11 @@ button.bg-dark:focus {
   text-transform: capitalize !important;
 }
 
+.font-weight-thin {
+  font-family: 'Alibaba PuHuiTi';
+  font-weight: 200 !important;
+}
+
 .font-weight-light {
   font-family: 'Alibaba PuHuiTi';
   font-weight: 300 !important;
@@ -9539,6 +9544,11 @@ button.bg-dark:focus {
 .font-weight-heavy{
   font-family: 'Alibaba PuHuiTi';
   font-weight: 700 !important;
+}
+
+.font-weight-black{
+  font-family: 'Alibaba PuHuiTi';
+  font-weight: 800 !important;
 }
 
 
@@ -10109,8 +10119,8 @@ h6,
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(255, 255, 255, 0.75); /* 半透明白色 */
-  border-radius: 15px; /* 大一点的圆角 */
+  background-color: rgba(255, 255, 255, 0.8); /* 半透明白色 */
+  border-radius: 20px; /* 大一点的圆角 */
   z-index: -1; /* 放在文字的后面 */
   transition: background-color 0.3s ease; /* 背景颜色过渡效果 */
 }
@@ -10129,22 +10139,22 @@ h6,
 
 .bilibili-fan .count {
   font-size: 60px; 
-  font-weight: 700; 
+  font-weight: 800; 
   color: #493573; 
   animation: countAnimation 0.3s ease; 
 }
 
 .bilibili-fan .notice{
   font-size: 14px; 
-  font-weight: 300; 
+  font-weight: 400; 
   color: gray; 
   margin-bottom: 14px;
 }
 
 @font-face {
   font-family: 'AlibabaPuHuiTi';
-  src: url('../fonts/AlibabaPuHuiTi-3-55-Regular.woff') format('woff'),
-  font-weight: 400;
+  src: url('../fonts/AlibabaPuHuiTi-3-115-Black.woff') format('woff'),
+  font-weight: 800;
   font-style: normal;
 }
 
@@ -10157,10 +10167,26 @@ h6,
 
 @font-face {
   font-family: 'AlibabaPuHuiTi';
-  src: url('../fonts/fonts/AlibabaPuHuiTi-3-45-Light.woff') format('woff'),
+  src: url('../fonts/AlibabaPuHuiTi-3-55-Regular.woff') format('woff'),
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'AlibabaPuHuiTi';
+  src: url('../fonts/AlibabaPuHuiTi-3-45-Light.woff') format('woff'),
   font-weight: 300;
   font-style: normal;
 }
+
+@font-face {
+  font-family: 'AlibabaPuHuiTi';
+  src: url('../fonts/AlibabaPuHuiTi-3-35-Thin.woff') format('woff'),
+  font-weight: 200;
+  font-style: normal;
+}
+
+
 
 header {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)); 
@@ -10188,14 +10214,20 @@ header {
     transform: scale(1.1); /* 鼠标悬停时放大图片 */
 }
 
+
+.about-container {
+  display: flex;
+  justify-content: flex-end; /* 让内容右对齐 */
+  margin-right: 20px; /* 整体右边留一点空间 */
+}
+
 .image-container {
   position: relative;
-  width: 200px; /* 图片变大 */
-  height: 200px;
-  margin-left: auto; /* 图片右对齐 */
-  margin-top: 40px;
+  width: 80px; /* 图片大小变小 */
+  height: 80px;
+  margin-left: 60px; /* 左边留点间距 */
   cursor: pointer;
-  
+  margin-top: 20px;
 }
 
 .image-container img {
@@ -10207,23 +10239,21 @@ header {
 
 .image-container .text-box {
   position: absolute;
-  bottom: 10px;
-  left: -80px; /* 文本框偏左 */
+  bottom: 5px; /* 调整文本框位置 */
+  left: -50px; /* 文本框偏左 */
   background-color: #483674DD;
-  padding: 10px 20px; /* 加长文本框 */
+  padding: 5px 10px; /* 减小文本框内边距 */
   color: #fff;
-  font-size: 16px;
-  font-weight: bold;
-  width: 230px; /* 使文本框更长 */
+  font-size: 12px; /* 调整字体大小 */
+  font-weight: 300; 
+  white-space: nowrap; /* 防止文本换行 */
   transition: color 0.3s ease;
 }
 
-/* 划掉效果 */
 .strikethrough {
   text-decoration: line-through;
 }
 
-/* 悬停效果 */
 .image-container:hover img {
   transform: scale(1.1);
 }
@@ -10232,11 +10262,11 @@ header {
   color: #ff5722;
 }
 
-/* 链接样式 */
 .image-container a {
   text-decoration: none;
   color: inherit;
 }
+
 
 .fy-button {
   display: inline-block; /* 自适应宽度 */
@@ -10244,7 +10274,7 @@ header {
   background-color: #483674; /* 按钮背景色 */
   color: #fff; /* 按钮文字颜色 */
   font-size: 16px;
-  font-weight: bold;
+  font-weight: 400;
   border: none; /* 去掉默认边框 */
   cursor: pointer; /* 鼠标变为手势 */
   text-align: center;
@@ -10259,3 +10289,13 @@ header {
   background-color: #372a55; /* 悬停时按钮背景色变深 */
   color: #ff5722; /* 悬停时按钮文字颜色变化 */
 }
+
+#uptime {
+  font-size: 16px;
+  color: #fff; /* 你可以根据需要修改颜色 */
+  text-align: center;
+  margin-top: 20px; /* 页面顶部的距离 */
+  font-family: 'AlibabaPuHuiTi', sans-serif;
+}
+
+
