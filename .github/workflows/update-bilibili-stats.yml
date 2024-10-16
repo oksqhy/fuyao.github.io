@@ -26,3 +26,9 @@ jobs:
         git add bilibili-stats.json
         git commit -m "Update Bilibili Stats" || echo "No changes to commit"
         git push origin HEAD:main  
+
+    - name: Install Vercel CLI
+      run: npm install -g vercel
+
+    - name: Deploy to Vercel
+      run: vercel --prod --token ${{ secrets.VERCEL_TOKEN }}
