@@ -10266,8 +10266,8 @@ header {
 
 h1 {
   color: #493573;
-  margin-top: 40px;
-  margin-bottom: 40px;
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
 }
 
 .grid-container {
@@ -10280,14 +10280,14 @@ h1 {
 }
 
 .grid-container div {
-  flex: 0 0 300px; /* 设置固定宽度 */
+  flex: 0 0 18.75rem; /* 设置固定宽度 */
   margin: 0 1.5rem 1.5rem 0;
   display: flex; /* 使用 Flexbox 以便于处理内部元素 */
   flex-direction: column; /* 垂直排列内部元素 */
-  border: solid 2px black;
-  padding: 5px;
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
-  border-radius: 5px;
+  border: solid 0.125rem black;
+  padding: 0.3125rem;
+  box-shadow: 0.3125rem 0.3125rem 0.3125rem rgba(0, 0, 0, 0.5);
+  border-radius: 0.3125rem;
   transition: all 0.25s ease-in-out;
   background-color: #ffffff20;
 }
@@ -10300,11 +10300,11 @@ h1 {
 .grid-container div img {
   width: 100%;
   filter: grayscale(0%);
-  border-radius: 5px;
+  border-radius: 0.3125rem;
   transition: all 0.25s ease-in-out;
 }
 .grid-container div p {
-  margin: 5px 0;
+  margin: 0.3125rem 0;
   padding: 0;
   text-align: center;
 }
