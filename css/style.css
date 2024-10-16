@@ -10322,3 +10322,13 @@ h1 {
 .strikethrough {
   text-decoration: line-through;
 }
+
+.fy-notice{
+  padding-left: 2rem;
+  background-color: yellow;
+  font-weight: 800;
+  font-size: 1rem;
+  color: #000;
+  z-index: 1001
+}
+  
