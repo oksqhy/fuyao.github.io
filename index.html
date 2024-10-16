@@ -10,6 +10,9 @@
     <meta name="keywords" content="符瑶, 符瑤, Koritsu, 符瑶Koritsu, B站, 虚拟主播, Vup, Vtuber, 应援, 直播, 直播应援站, 符瑶粉丝，男娘">
     <meta property="og:image" content="img/fuyaoicon"> 
     <meta property="og:type" content="website">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+
 
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
@@ -74,7 +77,8 @@
             <a href="https://xnn.fuyao.moe" target="_blank"> 
                 <img src="img/fuyaologo.webp" alt="Logo" class="logo">
             </a>
-            <h1 style="color: rgb(255, 255, 255); font-weight:300; font-size: 24px; margin: 0;">符瑶烤栗子 ☁ 烧烤摊</h1>
+            <h1 class="fy-title">符瑶烤栗子 ☁ 烧烤摊</h1>
+
         </div>
     </header>
     
@@ -162,15 +166,14 @@
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
                 const data = await response.json();
-                console.log(data); // 输出 JSON 数据到控制台，检查其结构
-                
-                // 从新的 JSON 结构中提取信息
-                const fansCount = data.fans; // 粉丝数
-                const name = data.name; // 名称
-                const face = data.face; // 头像 URL
+                console.log(data); 
+
+                const fansCount = data.fans; 
+                const name = data.name; 
+                const face = data.face; 
     
                 // 更新 HTML 元素
-                document.getElementById('fans-count').innerText = fansCount; // 显示粉丝数
+                document.getElementById('fans-count').innerText = fansCount; 
             } catch (error) {
                 console.error('获取 B站 粉丝数失败:', error);
                 document.getElementById('fans-count').innerText = '获取失败';
@@ -225,9 +228,6 @@
                           </a>
                         </div>
                     </div>
-                      
-                      
-                
                 </div>
             </div>
         </div>
@@ -235,52 +235,47 @@
  <!-- About End -->
 
 <!-- gallery start -->
-<div>
-    <div class="custom-gallery">
-        <div class="position-relative d-flex align-items-center justify-content-center">
-            <h1 class="display-1 font-weight-black text-secondary" >皮套橱窗</h1>
-        </div>
-        <h5 class="text-white text-center font-weight-regular"><a href="https://space.bilibili.com/11612129">画师：@相良sei </a>
-        </h5>
-        <h5 class="text-white text-center font-weight-regular"><a href="https://space.bilibili.com/2055610">模型：@狐莵子</a>
-        </h5>
-        <h5 class="text-white text-center font-weight-regular"><a href="https://space.bilibili.com/105158">鲨狗形象：@月兔弥生</a>
-        </h5>
-        <div class="gallery">   
-            <div class="block">
-                <img src="img/fuyao0.webp" alt="刚出道时的形象">
-                <div class="card__head">符瑶</div>
-            </div>
-            <div class="block">
-                <img src="img/fuyao1.webp" alt="符瑶1.0">
-                <div class="card__head">女仆狗狗</div>
-            </div>
-            <div class="block">
-                <img src="img/fuyao2.webp" alt="触手萝莉"> 
-                <div class="card__head">触手萝莉</div> 
-        </div>
-            <div class="block">
-                <img src="img/fydog-zoum.webp" alt="Q版符瑶">
-                <div class="card__head">鲨鱼狗狗（鲨狗）</div>
-            </div>
-            <div class="block">
-                <img src="img/fuyao3.webp" alt="符瑶3.0">
-                <div class="card__head">成熟大狗狗</div>
-            </div>
-        </div>
+<div class="fy-gallery">
+    <h1 class="display-1 font-weight-black text-secondary">符瑶的衣柜</h1>
+    <div class="grid-container">
+    <div>
+        <img class='grid-item grid-item-1' src='img/character1.webp' alt=''>
+        <p class="character-name font-weight-heavy">符瑶3.0</p>
+        <p class="character-desc">当前使用的形象，成熟温柔的大狗狗。</p>
+    </div>
+    <div>
+        <img class='grid-item grid-item-2' src='img/character2.webp' alt=''>
+        <p class="character-name font-weight-heavy">鲨鱼狗狗</p>
+        <p class="character-desc">可爱的鲨鱼狗狗，符瑶的Q版形象，<span class="strikethrough">简称鲨狗。</span></p>
+    </div>
+    <div>
+        <img class='grid-item grid-item-3' src='img/character3.webp' alt=''>
+        <p class="character-name font-weight-heavy">符瑶2.0</p>
+        <p class="character-desc">触手萝莉，<span class="strikethrough">正式雌堕的里程碑。</span></p>
+    </div>
+    <div>
+        <img class='grid-item grid-item-4' src='img/character4.webp' alt=''>
+        <p class="character-name font-weight-heavy">符瑶1.0</p>
+        <p class="character-desc">纯洁的女仆狗狗，本体是白云。</p>
+    </div>
+    <div>
+        <img class='grid-item grid-item-5' src='img/character5.webp' alt=''>
+        <p class="character-name font-weight-heavy">符瑶Koritsu </p>
+        <p class="character-desc">最初的皮肤，梦开始的地方。</p>
+    </div>
     </div>
 </div>
 
-
-
-    <!-- gallery end -->
+<!-- gallery end -->
   
-    <!-- Footer Start -->
+<!-- Footer Start -->
+
     <div class="container-fluid bg-footer text-white px-sm-3">
         <div class="container text-center py-5">
         <p class="font-weight-light"> <a>符瑶Koritsu应援站，由符导员创建，内容不代表符瑶Koritsu本人立场。符瑶Koritsu的虚拟形象与插画版权归符瑶本人和其他相关创作者所有。</a>
         </p>
-        <div id="uptime">本站已运行: <span id="time">0天 0小时 0分钟 0秒</span></div>
+        <div id="uptime">本站已运行: <span id="time">0天 0小时 0分钟 0秒</span>
+        </div>
         <script>
             window.onload = function () {
               // 设置网站开设的日期 (格式：年-月-日)
@@ -303,7 +298,9 @@
               setInterval(updateTime, 1000);
             };
           </script>
-          
+
+         <p class="font-weight-light"> 如果你希望共同参与网站内容的构建和维护，请联系站长<a href= "https://space.bilibili.com/258789825">@Hechiam无双大丝瓜</a> 。
+         </p> 
           
         <p class="font-weight-light" style="display: inline; margin: 0;"> 
             <a href="https://icp.gov.moe/?keyword=20240225" target="_blank" style="color: white !important;">萌ICP备20240225号</a>
@@ -313,11 +310,7 @@
         </p>
         </div>
     </div>
-    
-    
     <!-- Footer End -->
-
-  
 </body>
 
 </html>
