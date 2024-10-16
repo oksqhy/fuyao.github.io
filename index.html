@@ -73,10 +73,15 @@
 
 <body>
     <header>
-        <div class="fy-notice ">
-            <a>喜报！本网站已被符瑶Koritsu本人光临<span class="strikethrough">并视奸</span>！
-            </a>
+        <div class="fy-notice">
+            <a>喜报！本网站已被符瑶Koritsu本人光临<span class="strikethrough">并视奸</span>！</a>
+            <button class="close-btn" onclick="closeNotice()">×</button>
         </div>
+        <script>
+            function closeNotice() {
+            document.querySelector('.fy-notice').style.display = 'none';
+        }
+        </script>
         <div class="header-content">
             <a href="https://xnn.fuyao.moe" target="_blank"> 
                 <img src="img/fuyaologo.webp" alt="Logo" class="logo">
