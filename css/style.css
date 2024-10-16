@@ -9572,6 +9572,11 @@ a.text-primary:hover, a.text-primary:focus {
   color: #ffffff !important;
 }
 
+.text-thirdly {
+  color: #000000
+}
+
+
 a.text-secondary:hover, a.text-secondary:focus {
   color: #494f54 !important;
 }
@@ -10212,7 +10217,6 @@ header {
   background-color: #483674; /* 按钮背景色 */
   color: #fff; /* 按钮文字颜色 */
   font-size: 1rem;
-  font-weight: 400;
   border: none; /* 去掉默认边框 */
   cursor: pointer; /* 鼠标变为手势 */
   text-align: center;

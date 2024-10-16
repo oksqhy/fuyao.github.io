@@ -137,50 +137,50 @@
                         </script>
                         
                         <div class="d-flex align-items-center justify-content-center">
-                            <a href="https://space.bilibili.com/2109776/" class="fy-button">
-                                Bilibili
+                            <a href="https://space.bilibili.com/2109776/" class="fy-button font-weight-bold">
+                                ▶▶▶ 关注Bilibili频道 ◀◀◀
                             </a>
-                            <a href="https://t.me/fuyaokoritsu/" class="fy-button">
-                               TG频道(非官方)
-                            </a>
-                        
                         </div>
-                       
+                        <div class="d-flex align-items-center justify-content-center" style="margin-top: 10px;" target="_blank">
+                            <a href="https://t.me/fuyaokoritsu/" class="font-weight-regular text-thirdly">
+                               Telegram直播通知频道（非官方）
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="bilibili-fan font-weight-black">
-            <div class="background"></div>
-            <div class="label">当前B站粉丝数</div>
-            <div class="count">
-                <span id="fans-count">加载中...</span>
+            <div class="bilibili-fan font-weight-black">
+                <div class="background"></div>
+                <div class="label">当前B站粉丝数</div>
+                <div class="count">
+                    <span id="fans-count">加载中...</span>
+                </div>
+                <div class="notice">数据每日刷新</div>
             </div>
-            <div class="notice">数据每日刷新</div>
-        </div>
         
-        <script>
-            async function fetchFansCount() {
-            try {
-                const response = await fetch('https://oksqhy.github.io/fuyao.github.io/bilibili-stats.json');
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                const data = await response.json();
-                console.log(data); 
+            <script>
+                async function fetchFansCount() {
+                try {
+                    const response = await fetch('https://oksqhy.github.io/fuyao.github.io/bilibili-stats.json');
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    const data = await response.json();
+                    console.log(data); 
 
-                const fansCount = data.fans; 
-                const name = data.name; 
-                const face = data.face; 
-    
-                // 更新 HTML 元素
-                document.getElementById('fans-count').innerText = fansCount; 
-            } catch (error) {
-                console.error('获取 B站 粉丝数失败:', error);
-                document.getElementById('fans-count').innerText = '获取失败';
+                    const fansCount = data.fans; 
+                    const name = data.name; 
+                    const face = data.face; 
+        
+                    // 更新 HTML 元素
+                    document.getElementById('fans-count').innerText = fansCount; 
+                } catch (error) {
+                    console.error('获取 B站 粉丝数失败:', error);
+                    document.getElementById('fans-count').innerText = '获取失败';
+                }
             }
-        }
-        fetchFansCount();
-        </script>
+            fetchFansCount();
+            </script>
         
         </div>
     </div>
