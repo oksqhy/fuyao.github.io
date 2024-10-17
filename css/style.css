@@ -59,7 +59,7 @@ body {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #6c757d;
+  color: #343a40;
   text-align: left;
   background-color: #ffffff;
 }
@@ -422,13 +422,12 @@ h6, .h6 {
 
 .display-1 {
   font-size: 5rem;
-  font-weight: 300;
-  line-height: 1.2;
+  font-weight: 800;
 }
 
-@media (max-width: 75rem) {
+@media (max-width: 745px) {
   .display-1 {
-    font-size: calc(2.125rem + 10.5vw) ;
+    font-size: 2.5rem ;
   }
 }
 
@@ -647,6 +646,7 @@ pre code {
   margin-right: -0.9375rem;
   margin-left: -0.9375rem;
 }
+
 
 .no-gutters {
   margin-right: 0;
@@ -10149,11 +10149,12 @@ header {
 
 .image-container {
   position: relative;
-  width: 6.25rem; 
-  height: 6.25rem;
+  width: 8rem; 
+  height: 8rem;
   margin-left: 3.75rem; /* 左边留点间距 */
   cursor: pointer;
   margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
 }
 
 /* 媒体查询，用于竖屏设备 */
@@ -10166,8 +10167,8 @@ header {
 
   .image-container {
     margin-bottom: 1rem; /* 为每个图片容器增加底部间距 */
-    width: 10rem; 
-    height: 10rem;
+    width: 8rem; 
+    height: 8rem;
   }
 }
 
@@ -10185,8 +10186,8 @@ header {
   background-color: #483674DD;
   padding: 0.3125rem 0.625rem; /* 减小文本框内边距 */
   color: #fff;
-  font-size: 0.75rem; /* 调整字体大小 */
-  font-weight: 300; 
+  font-size: 1rem; /* 调整字体大小 */
+  font-weight: 700; 
   white-space: nowrap; /* 防止文本换行 */
   transition: color 0.3s ease;
 }
@@ -10249,7 +10250,7 @@ header {
 
 @media (max-width: 48rem) {
   .fy-title {
-    font-size: 1.3rem; /* 在小屏幕上减小字体大小 */
+    font-size: 1.25rem; /* 在小屏幕上减小字体大小 */
   }
 }
 
@@ -10323,6 +10324,7 @@ h1 {
   text-decoration: line-through;
 }
 
+/* 通知 */
 .fy-notice {
   position: relative;
   background-color: #ffeb3b; /* 黄色背景 */
@@ -10345,4 +10347,40 @@ h1 {
 
 .close-btn:hover {
   color: red;
+}
+
+@media (max-width: 48rem) {
+  .fy-notice {
+    font-size: 0.8rem; 
+  }
+  .close-btn{
+    font-size: 0.8rem; 
+  }
+
+}
+
+/*关于-镜像*/
+.about-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.about-section-bg {
+  background-color: #f3e5f5; /* 设置淡紫色背景 */
+  padding: 2rem 1rem; /* 添加适当的内边距以让内容不至于太紧凑 */
+}
+
+@media (max-width: 767.98px) {
+  .about-section {
+      flex-direction: column;
+  }
+
+  .about-section .col-lg-7 {
+      order: 2; /* 确保内容在图片下 */
+  }
+
+  .about-section .col-lg-5 {
+      order: 1; /* 确保图片在上方 */
+  }
 }
