@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="zh-cs">
+<html lang="zh-Hans">
 
 <head>
     <meta charset="utf-8">
     <title>符瑶烤栗子 ☁ 烧烤摊</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta property="og:title" content="符瑶Koritsu应援站">
+    <meta property="og:title" content="符瑶Koritsu应援站——符瑶烤栗子 ☁ 烧烤摊">
     <meta property="og:description" content="由符导员的爱组成的符瑶应援网站。香香软软的小男娘谁不爱呢? 关注符瑶Koritsu喵! 关注符瑶Koritsu谢谢喵!">
     <meta name="keywords" content="符瑶, 符瑤, Koritsu, 符瑶Koritsu, B站, 虚拟主播, Vup, Vtuber, 应援, 直播, 直播应援站, 符瑶粉丝，男娘">
     <meta property="og:image" content="img/fuyaoicon"> 
@@ -22,6 +22,31 @@
     
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+
+    <script src="js/opencc.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // 初始化转换器，加载从简体到繁体的配置文件
+            fetch('js/opencc-data/s2tw.json')  // 加载简体到繁体转换规则
+                .then(response => response.json())
+                .then(config => {
+                    const converter = OpenCC.Converter(config); // 使用加载的配置创建转换器
+
+                    // 获取页面上需要转换的文本元素
+                    const textElement = document.getElementById('translatable');
+
+                    // 当点击按钮时，执行转换
+                    document.getElementById('lang-toggle').addEventListener('click', function () {
+                        const originalText = textElement.textContent; // 获取原始文本
+                        const convertedText = converter(originalText); // 执行简体到繁体的转换
+                        textElement.textContent = convertedText; // 将转换后的文本展示出来
+                    });
+                })
+                .catch(error => {
+                    console.error('加载转换配置失败:', error);
+                });
+        });
+    </script>
 
     <style>
         body {
@@ -64,11 +89,8 @@
         } 
 
     </style>
-    
-
     <!-- CSP 设置 -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self' https://oksqhy.github.io; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline';">
-
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self' https://oksqhy.github.io https://browser.events.data.microsoft.com; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; frame-src 'self' https://wj.qq.com;">
 </head>
 
 <body>
@@ -88,6 +110,7 @@
             </a>
             <h1 class="fy-title">符瑶烤栗子 ☁ 烧烤摊</h1>
         </div>
+        <button id="lang-toggle" class="fy-button">切换简体/繁体</button>
     </header>
     
     <div class="container-fluid bg-primary d-flex align-items-center mb-5 py-5" id="home">
@@ -163,7 +186,7 @@
                 <div class="count">
                     <span id="fans-count">加载中...</span>
                 </div>
-                <div class="notice">数据每日刷新</div>
+                <div class="notice">数据每日更新</div>
             </div>
         
             <script>
@@ -230,7 +253,7 @@
         </div>
     </div>
 
-    <div class="container-fluid about-section-bg" id="About">
+    <div class="container-fluid about-section-bg" id="Anecdotes">
         <div class="container">
             <div class="position-relative d-flex align-items-center justify-content-center">
                 <h1 class="display-1 font-weight-black text-primary">奇闻异事</h1>
@@ -264,8 +287,7 @@
                 </div>
             </div>
         </div>
-    </div>
-    
+    </div> 
  <!-- About End -->
 
 <!-- gallery start -->
@@ -301,12 +323,25 @@
 </div>
 
 <!-- gallery end -->
+<!-- web-notice end -->
+<div class="container-fluid about-section-bg" id="web-notice">
+    <div class="container">
+        <div class="row about-section">
+            <div class="col-lg-12">
+                <h3 class="mb-4 font-weight-heavy">关于本站&声明：</h3>
+                <p class="font-weight-regular">本站是由符导员创建的符瑶Koritsu应援站，属于对符瑶Koritsu形象的二次创作，内容不代表符瑶Koritsu本人立场。符瑶Koritsu的虚拟形象与相关图片的版权归符瑶本人和其他相关创作者所有。</p>
+                <p class="font-weight-regular">本站遵循CC BY-NC-SA（署名-非商业性使用-相同方式共享）协议。在署名原作者且遵循相同协议的情况下，可以非商业性的使用。</p>
+                <p class="font-weight-regular">出于网站架设的便利性，及优化港、澳、台、新、马等地区粉丝的访问体验，本站由Github Pages + Vercel托管。对于中国大陆粉丝可能遇到的访问困难问题深表歉意！</a></p>
+                <p class="font-weight-regular"> 如果你希望共同参与网站内容的构建和维护，请联系站长<a class="text-dark" href= "https://space.bilibili.com/258789825">@Hechiam无双大丝瓜</a> 。</p> 
+            </div>
+        </div>        
+    </div>
+</div>
+<!-- web-notice end -->
 <!-- Footer Start -->
 
     <div class="container-fluid bg-footer text-white px-sm-3">
         <div class="container text-center py-5">
-        <p class="font-weight-light"> <a>符瑶Koritsu应援站，由符导员创建，内容不代表符瑶Koritsu本人立场。符瑶Koritsu的虚拟形象与插画版权归符瑶本人和其他相关创作者所有。</a>
-        </p>
         <div id="uptime">本站已运行: <span id="time">0天 0小时 0分钟 0秒</span>
         </div>
         <script>
@@ -332,8 +367,7 @@
             };
           </script>
 
-         <p class="font-weight-light"> 如果你希望共同参与网站内容的构建和维护，请联系站长<a href= "https://space.bilibili.com/258789825">@Hechiam无双大丝瓜</a> 。
-         </p> 
+    
           
         <p class="font-weight-light" style="display: inline; margin: 0;"> 
             <a href="https://icp.gov.moe/?keyword=20240225" target="_blank" style="color: white !important;">萌ICP备20240225号</a>
