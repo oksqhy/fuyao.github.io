@@ -15,7 +15,7 @@ jobs:
 
     - name: Get Bilibili Stats
       run: |
-        curl -s "https://api.bilibili.com/x/web-interface/card?mid=2109776" | jq '{fans: .data.card.fans, name: .data.card.name, face: .data.card.face}' > public/bilibili-stats.json
+        curl -s "https://api.bilibili.com/x/web-interface/card?mid=2109776" | jq '{fans: .data.card.fans, name: .data.card.name, face: .data.card.face}' > bilibili-stats.json
 
     - name: Commit and Push Bilibili Stats
       env:
@@ -23,7 +23,6 @@ jobs:
       run: |
         git config user.name "github-actions[bot]"
         git config user.email "github-actions[bot]@users.noreply.github.com"
-        mv bilibili-stats.json public/bilibili-stats.json  # 移动文件到 public 文件夹
-        git add public/bilibili-stats.json
+        git add bilibili-stats.json
         git commit -m "Update Bilibili Stats" || echo "No changes to commit"
         git push origin HEAD:main  
