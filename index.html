@@ -52,7 +52,7 @@
 
         .white-box {
             background: rgba(255, 255, 255, 0.8); /* 半透明白色 */
-            border-radius: 20px; /* 较大的圆角 */
+            border-radius: 50px; /* 较大的圆角 */
             padding: 30px; /* 增加内边距 */
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
         }
@@ -64,7 +64,8 @@
 
     </style>
     <!-- CSP 设置 -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self' https://oksqhy.github.io https://browser.events.data.microsoft.com; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; frame-src 'self' https://wj.qq.com;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self' https://oksqhy.github.io; style-src 'self' 'unsafe-inline' https://giscus.app; script-src 'self' 'unsafe-inline' https://giscus.app; frame-src 'self' https://giscus.app;">
+    
 </head>
 
 <body>
@@ -89,8 +90,8 @@
     <div class="container-fluid bg-primary d-flex align-items-center mb-5 py-5" id="home">
         <div class="container content">
             <div class="row align-items-center">
-                <div class="col-lg-5 px-5 pl-lg-0 pb-5 pb-lg-0" style="margin-top: 20px;">
-                    <img class="img-fluid w-100 rounded-circle shadow-sm" src="img/fuyaoicon.jpg" alt="">
+                <div class="col-lg-5 px-5 pl-lg-0 pb-5 pb-lg-0">
+                    <img class="img-fluid w-100 rounded-circle shadow-sm" src="img/fuyaoicon.webp" alt="">
                 </div>
                 <div class="col-lg-7 text-center text-lg-left">
                     <div class="white-box">
@@ -210,13 +211,13 @@
                     <div class="about-container">
                         <div class="image-container">
                         <a href="https://zh.moegirl.org.cn/zh-hans/%E7%AC%A6%E7%91%B6koritsu" target="_blank">
-                            <img src="img/fuyaoQQ.jpg" alt="image">
+                            <img src="img/fuyaoQQ.webp" alt="image">
                             <div class="text-box">萌娘百科</div>
                         </a>
                         </div>
                         <div class="image-container">
                         <a href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=gd8CUftkf4PyfkYKYdLeHAghuPZYxEP2&authKey=Y8USi2DOaRX99Ea6ZYxxnQWi7QJFRdmRX2Gn%2Byu4PUNfoDGupXAbRnabspUY5GML&noverify=0&group_code=681067946" target="_blank">
-                            <img src="img/fyqq.jpg" alt="image">
+                            <img src="img/fyqq.webp" alt="image">
                             <div class="text-box">QQ粉丝群</div>
                         </a>
                         </div>
@@ -256,7 +257,7 @@
                     </div>
                 </div>
                 <div class="col-lg-5 pb-4 pb-lg-2 order-1 order-lg-2">
-                    <img class="img-fluid rounded w-100" src="img/fy-qwys.jpg" alt="">
+                    <img class="img-fluid rounded w-100" src="img/fy-qwys.webp" alt="">
                 </div>
             </div>
         </div>
