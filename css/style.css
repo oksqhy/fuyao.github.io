@@ -32,8 +32,8 @@
   --breakpoint-md: 48rem;
   --breakpoint-lg: 62rem;
   --breakpoint-xl: 75rem;
-  --font-family-sans-serif: "AlibabaPuHuiTi", sans-serif;
-  --font-family-monospace: 'Alibaba Puhuiti', SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-family-sans-serif: "AlibabaPuHuiTi", "AlibabaSansTC", sans-serif;
+  --font-family-monospace: 'AlibabaPuhuiti', 'AlibabaSansTC', SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 *,
@@ -422,7 +422,7 @@ h6, .h6 {
 
 .display-1 {
   font-size: 5rem;
-  font-weight: 800;
+  font-weight: 600;
 }
 
 @media (max-width: 745px) {
@@ -5550,7 +5550,7 @@ a.badge-dark:focus, a.badge-dark.focus {
 .close {
   float: right;
   font-size: 1.5rem;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 1;
   color: #000;
   text-shadow: 0 0.0625rem 0 #fff;
@@ -9549,12 +9549,12 @@ button.bg-dark:focus {
 
 .font-weight-heavy{
   font-family: 'Alibaba PuHuiTi';
-  font-weight: 700 !important;
+  font-weight: 500 !important;
 }
 
 .font-weight-black{
   font-family: 'Alibaba PuHuiTi';
-  font-weight: 800 !important;
+  font-weight: 600 !important;
 }
 
 
@@ -10063,7 +10063,7 @@ h6,
 
 .bilibili-fan .count {
   font-size: 3.75rem; 
-  font-weight: 800; 
+  font-weight: 600; 
   color: #493573; 
   animation: countAnimation 0.3s ease; 
 }
@@ -10075,17 +10075,12 @@ h6,
   margin-bottom: 0.875rem;
 }
 
-@font-face {
-  font-family: 'AlibabaPuHuiTi';
-  src: url('../fonts/AlibabaPuHuiTi-3-115-Black.woff') format('woff'),
-  font-weight: 800;
-  font-style: normal;
-}
+
 
 @font-face {
   font-family: 'AlibabaPuHuiTi';
-  src: url('../fonts/AlibabaPuHuiTi-3-105-Heavy.woff') format('woff'),
-  font-weight: 700;
+  src: url('../fonts/AlibabaPuHuiTi-3-45-Light.woff') format('woff'),
+  font-weight: 300;
   font-style: normal;
 }
 
@@ -10098,18 +10093,45 @@ h6,
 
 @font-face {
   font-family: 'AlibabaPuHuiTi';
-  src: url('../fonts/AlibabaPuHuiTi-3-45-Light.woff') format('woff'),
-  font-weight: 300;
+  src: url('../fonts/AlibabaPuHuiTi-3-75-SemiBold.woff') format('woff'),
+  font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'AlibabaPuHuiTi';
-  src: url('../fonts/AlibabaPuHuiTi-3-35-Thin.woff') format('woff'),
-  font-weight: 200;
+  src: url('../fonts/AlibabaPuHuiTi-3-95-ExtraBold.woff') format('woff'),
+  font-weight: 600;
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'AlibabaSansTC';
+  src: url('../fonts/AlibabaSansTC-45.woff') format('woff'),
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'AlibabaSansTC';
+  src: url('../fonts/AlibabaSansTC-55.woff') format('woff'),
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'AlibabaSansTC';
+  src: url('../fonts/AlibabaSansTC-75.woff') format('woff'),
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'AlibabaSansTC';
+  src: url('../fonts/AlibabaSansTC-95.woff') format('woff'),
+  font-weight: 600;
+  font-style: normal;
+}
 
 
 header {
@@ -10124,7 +10146,7 @@ header {
 .header-content {
   display: flex;
   align-items: center;
-  padding: 1.25rem;
+  padding: 1rem;
 }
 
 
@@ -10190,7 +10212,7 @@ header {
   padding: 0.3125rem 0.625rem; /* 减小文本框内边距 */
   color: #fff;
   font-size: 1rem; /* 调整字体大小 */
-  font-weight: 700;
+  font-weight: 500;
   white-space: nowrap; /* 防止文本换行 */
   transition: color 0.3s ease;
   z-index: 10; /* 确保按钮在渐变层上方 */
@@ -10206,6 +10228,7 @@ header {
 .image-container::after {
   content: "";
   position: absolute;
+  pointer-events: none;
   bottom: 0;
   left: 0;
   width: 100%;
@@ -10260,12 +10283,12 @@ header {
   color: #fff; /* 你可以根据需要修改颜色 */
   text-align: center;
   margin-top: 20; /* 页面顶部的距离 */
-  font-family: 'AlibabaPuHuiTi', sans-serif;
+  font-family: 'AlibabaPuHuiTi','AlibabaSansTC', sans-serif;
 }
 
 .fy-title {
   color: rgb(255, 255, 255);
-  font-weight: 700;
+  font-weight: 600;
   margin: 0;
   font-size: 2rem; 
 }
@@ -10283,7 +10306,7 @@ header {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  font-family: "AlibabaPuHuiTi";
+  font-family: 'AlibabaPuHuiTi','AlibabaSansTC', sans-serif;
   background-color: #483674;
 }
 
@@ -10337,6 +10360,7 @@ h1 {
 }
 
 .character-desc {
+  font-weight: 300;
   font-size: 1em;
   color: #dfdfdf;
 }
@@ -10352,7 +10376,7 @@ h1 {
   color: black; /* 黑色文字 */
   text-align: center;
   font-size: 1rem; /* 调整文字大小 */
-  font-weight: 700;
+  font-weight: 500;
 
 }
 
@@ -10445,3 +10469,58 @@ body {
 .btn {
   margin: 0 10px;
 } 
+
+.lang-toggle-btn {
+  display: inline-block;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  background-color: #483674;
+  color: #fff;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-decoration: none;
+  margin-left: 0.625rem;
+}
+
+.lang-toggle-btn:hover {
+  background-color: #372a55;
+  color: #ff5722;
+}
+
+
+.banner {
+  position: relative;
+  height: 250px; /* 控制纵向的高度 */
+  background-image: url('../img/background.webp'); /* 背景图片路径 */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+  z-index: 0; 
+  margin-bottom: 1rem;
+}
+.banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75); /* 半透明黑色 */
+  z-index: 1;
+}
+/* 去掉文字底部的背景色 */
+.banner .banner-text{
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-top: 10rem;
+  margin-bottom: 2rem;
+  color: #ffffff;
+  z-index: 2; 
+}
