@@ -35,7 +35,7 @@
     <link href="css/style.css" rel="stylesheet">
     <style>
         body {
-            font-family: 'AlibabaPuHuiTi', sans-serif;
+            font-family: sans-serif;
         }
 
         #home {
@@ -75,7 +75,14 @@
 
     </style>
     <!-- CSP 设置 -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self' https://oksqhy.github.io; style-src 'self' 'unsafe-inline' https://giscus.app; script-src 'self' 'unsafe-inline' https://giscus.app; frame-src 'self' https://giscus.app;">
+    <meta http-equiv="Content-Security-Policy" 
+    content="default-src 'self'; 
+    connect-src 'self' https://oksqhy.github.io; 
+    style-src 'self' 'unsafe-inline'; 
+    script-src 'self' 'unsafe-inline' https://pl.fuyao.moe;
+    frame-src 'self' 'unsafe-inline';
+    frame-ancestors 'self' 'unsafe-inline';
+    ">
 </head>
 
 <body>
@@ -120,7 +127,7 @@
                     <img class="img-fluid rounded w-100" src="img/fy-gender.webp" alt="">
                 </div>
                 <div class="col-lg-7" id="gender">
-                    <h1 class="mb-4 font-weight-heavy">符瑶的性别？</h1>
+                    <h1 class="mb-4 mt-4 font-weight-blod">符瑶的性别？</h1>
                     <p class="font-weight-regular">是男生！是男生！是男生！重要的事情说三遍！！！</p>
                     <p class="font-weight-regular">符宝最大的特点就是——声音像女孩子。因此，第一次进入直播间的观众会往往会对符宝的性别产生疑惑。</p>
                     <p class="font-weight-regular">虽然符宝的形象是女孩子，声音也很像女孩子，但是符宝其实是100%的男孩子哦！生理性别男，心理性别男，性取向也是喜欢女生！<span class="strikethrough">（都说了不是小男娘!）</span></p>
@@ -139,7 +146,7 @@
             <div class="row align-items-center about-section">
               
                     <div class="col-lg-7" id="nakanohito">
-                        <h1 class="mb-4 font-weight-heavy">符瑶的中之人？</h1>
+                        <h1 class="mb-4 mt-4 font-weight-blod">符瑶的中之人？</h1>
                         <p class="font-weight-regular">目前是全职个人势虚拟主播，隶属于制片人计划，主要在Bilibili活动，最近火到了台湾，于是开始在Youtube上营业。符瑶的粉丝被称为“符导员”<span class="strikethrough"></span>（导导你的）</span>。</p>
                         <p class="font-weight-regular">符瑶Koritsu目前使用的大狗狗形象很符合中之人的气质。符宝脾气很好，即使遇到很令人生气的事情，也会强忍着不会在直播间发火。</p>
                         <p class="font-weight-regular">对于自己的虚拟主播事业比较随缘，直播内容以游戏为主，连着打十几个小时的无畏契约是常态。有时会突然想出一些鬼点子，比如在用手玩到一半突然开始用脚玩《黑神话：悟空》，之后又连着玩了好几天，每次玩还都换不一样的袜子（包括黑丝，白丝，猫爪袜……）。</p>
@@ -162,7 +169,7 @@
                     </div>
                  
                 <div class="col-lg-5 pb-4 pb-lg-2 order-1 order-lg-2">
-                    <img class="img-fluid rounded w-100" style="margin-top: 10px" src="img/fuyao11.webp" alt="fuyao-cosplay">
+                    <img class="mt-4 img-fluid rounded w-100" style="margin-top: 10px" src="img/fuyao11.webp" alt="fuyao-cosplay">
                 </div>
             </div>
         </div>
@@ -191,25 +198,32 @@
         </div>
     </div>
     <!-- article end -->  
-    
-     
-
+    <div id="remark42">
+    <script>
+        var remark_config = {
+          host: 'https://pl.fuyao.moe',
+          site_id: 'remark',
+        }
+    </script>
+    </div>
+    <script>!function(e,n){for(var o=0;o<e.length;o++){var r=n.createElement("script"),c=".js",d=n.head||n.body;"noModule"in r?(r.type="module",c=".mjs"):r.async=!0,r.defer=!0,r.src=remark_config.host+"/web/"+e[o]+c,d.appendChild(r)}}(remark_config.components||["embed"],document);</script>
     <!-- web-notice end -->
     <div class="container-fluid about-section-bg" id="web-notice">
         <div class="container">
             <div class="row about-section">
                 <div class="col-lg-12">
-                    <h3 class="mb-4 font-weight-heavy">关于本站&声明：</h3>
+                    <h1 class="mb-4 font-weight-blod">关于本站&声明：</h1>
                     <p class="font-weight-regular">本站是由符导员创建的符瑶Koritsu应援站，属于对符瑶Koritsu形象的二次创作，内容不代表符瑶Koritsu本人立场。符瑶Koritsu的虚拟形象与相关图片的版权归符瑶本人和其他相关创作者所有。</p>
                     <p class="font-weight-regular">本站遵循CC BY-NC-SA（署名-非商业性使用-相同方式共享）协议。在署名原作者且遵循相同协议的情况下，可以非商业性的使用。</p>
                     <p class="font-weight-regular">出于网站架设的便利性，及优化港、澳、台、新、马等地区粉丝的访问体验，本站由Github Pages + Vercel托管。对于中国大陆粉丝可能遇到的访问困难问题深表歉意！</a></p>
                     <p class="font-weight-regular"> 如果你希望共同参与网站内容的构建和维护，请联系站长<a class="text-dark" href= "https://space.bilibili.com/258789825">@Hechiam无双大丝瓜</a> 。</p> 
-                    <p class="font-weight-regular">繁體中文頁面由Opencc轉換。</p>
+                    
                 </div>
             </div>        
         </div>
     </div>
     <!-- web-notice end -->
+   
     <!-- Footer Start -->
     <div class="container-fluid bg-footer text-white px-sm-3">
         <div class="container text-center py-5">

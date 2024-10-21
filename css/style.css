@@ -32,8 +32,8 @@
   --breakpoint-md: 48rem;
   --breakpoint-lg: 62rem;
   --breakpoint-xl: 75rem;
-  --font-family-sans-serif: "AlibabaPuHuiTi", "AlibabaSansTC", sans-serif;
-  --font-family-monospace: 'AlibabaPuhuiti', 'AlibabaSansTC', SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-family-sans-serif: sans-serif;
+  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 *,
@@ -43,7 +43,7 @@
 }
 
 html {
-  font-family: "AlibabaPuHuiTi", sans-serif;
+  font-family: sans-serif;
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -55,7 +55,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 
 body {
   margin: 0;
-  font-family: "AlibabaPuHuiTi", sans-serif;
+  font-family: sans-serif;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -362,9 +362,9 @@ template {
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   margin-bottom: 0.5rem;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1.2;
-  color: #343a40;
+  color: #493573;
 }
 
 h1, .h1 {
@@ -5841,7 +5841,7 @@ a.close.disabled {
   z-index: 1070;
   display: block;
   margin: 0;
-  font-family: "AlibabaPuHuiTi", sans-serif;
+  font-family: sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -5954,7 +5954,7 @@ a.close.disabled {
   z-index: 1060;
   display: block;
   max-width: 17.25rem;
-  font-family: "AlibabaPuHuiTi", sans-serif;
+  font-family: sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -9517,12 +9517,12 @@ button.bg-dark:focus {
 }
 
 .font-weight-thin {
-  font-family: 'Alibaba PuHuiTi';
+  
   font-weight: 200 !important;
 }
 
 .font-weight-light {
-  font-family: 'Alibaba PuHuiTi';
+ 
   font-weight: 300 !important;
 }
 
@@ -9535,7 +9535,7 @@ button.bg-dark:focus {
 }
 
 .font-weight-regular{
-  font-family: 'Alibaba PuHuiTi';
+ 
   font-weight: 400 !important;
 }
 
@@ -9548,12 +9548,12 @@ button.bg-dark:focus {
 }
 
 .font-weight-heavy{
-  font-family: 'Alibaba PuHuiTi';
+  
   font-weight: 500 !important;
 }
 
 .font-weight-black{
-  font-family: 'Alibaba PuHuiTi';
+  
   font-weight: 600 !important;
 }
 
@@ -10076,64 +10076,6 @@ h6,
 }
 
 
-
-@font-face {
-  font-family: 'AlibabaPuHuiTi';
-  src: url('../fonts/AlibabaPuHuiTi-3-45-Light.woff') format('woff'),
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'AlibabaPuHuiTi';
-  src: url('../fonts/AlibabaPuHuiTi-3-55-Regular.woff') format('woff'),
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'AlibabaPuHuiTi';
-  src: url('../fonts/AlibabaPuHuiTi-3-75-SemiBold.woff') format('woff'),
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'AlibabaPuHuiTi';
-  src: url('../fonts/AlibabaPuHuiTi-3-95-ExtraBold.woff') format('woff'),
-  font-weight: 600;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'AlibabaSansTC';
-  src: url('../fonts/AlibabaSansTC-45.woff') format('woff'),
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'AlibabaSansTC';
-  src: url('../fonts/AlibabaSansTC-55.woff') format('woff'),
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'AlibabaSansTC';
-  src: url('../fonts/AlibabaSansTC-75.woff') format('woff'),
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'AlibabaSansTC';
-  src: url('../fonts/AlibabaSansTC-95.woff') format('woff'),
-  font-weight: 600;
-  font-style: normal;
-}
-
-
 header {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)); 
   position: fixed;
@@ -10283,7 +10225,7 @@ header {
   color: #fff; /* 你可以根据需要修改颜色 */
   text-align: center;
   margin-top: 20; /* 页面顶部的距离 */
-  font-family: 'AlibabaPuHuiTi','AlibabaSansTC', sans-serif;
+  font-family: sans-serif;
 }
 
 .fy-title {
@@ -10306,11 +10248,11 @@ header {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  font-family: 'AlibabaPuHuiTi','AlibabaSansTC', sans-serif;
+  font-family: sans-serif;
   background-color: #483674;
 }
 
-h1 {
+.fy-gallery h1 {
   color: #493573;
   margin-top: 2.5rem;
   margin-bottom: 2.5rem;
@@ -10432,7 +10374,7 @@ h1 {
 
 /*原head内容*/
 body {
-  font-family: 'AlibabaPuHuiTi', sans-serif;
+  font-family: sans-serif;
 }
 
 #home {
@@ -10489,7 +10431,14 @@ body {
   background-color: #372a55;
   color: #ff5722;
 }
-
+@media (max-width: 48rem) {
+    .lang-toggle-btn {
+      font-size: 0.8rem;
+      padding-top: 4px;
+    padding-bottom: 4px;
+    }
+  
+}
 
 .banner {
   position: relative;
@@ -10521,6 +10470,8 @@ body {
   font-weight: bold;
   margin-top: 10rem;
   margin-bottom: 2rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
   color: #ffffff;
   z-index: 2; 
 }
