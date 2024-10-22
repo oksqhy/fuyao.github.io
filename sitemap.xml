@@ -1,12 +1,38 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://oksqhy.github.io/fuyao.github.io/</loc>
-  </url>
-  <url>
-    <loc>https://oksqhy.github.io/fuyao.github.io/gender.html</loc>
-  </url>
-  <url>
-    <loc>https://oksqhy.github.io/fuyao.github.io/index.html</loc>
-  </url>
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<url>
+  <loc>https://xnn.fuyao.moe/</loc>
+  <lastmod>2024-10-22T02:58:14+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://xnn.fuyao.moe/gender.html</loc>
+  <lastmod>2024-10-22T02:57:50+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://xnn.fuyao.moe/index.html</loc>
+  <lastmod>2024-10-22T02:57:50+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://xnn.fuyao.moe/zh-tw</loc>
+  <lastmod>2024-10-22T02:57:50+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://xnn.fuyao.moe/gender.html</loc>
+  <lastmod>2024-10-22T02:57:50+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://xnn.fuyao.moe/index.html</loc>
+  <lastmod>2024-10-22T02:57:50+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
 </urlset>
