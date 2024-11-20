@@ -10201,7 +10201,7 @@ header {
 
 .fy-button {
   display: inline-block; /* 自适应宽度 */
-  padding: 0.625rem 1.25rem; /* 内边距使按钮内容不会紧贴边缘 */
+  padding: 10px 10px; /* 内边距使按钮内容不会紧贴边缘 */
   background-color: #483674; /* 按钮背景色 */
   color: #fff; /* 按钮文字颜色 */
   font-size: 1rem;
