@@ -10475,3 +10475,45 @@ body {
   color: #ffffff;
   z-index: 2; 
 }
+/* 表格样式 */
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-family: Arial, sans-serif;
+}
+
+/* 表头样式 */
+.styled-table thead {
+  background-color: #493573;
+  color: white;
+  text-align: left;
+  font-weight: bold;
+}
+
+/* 表格行样式 */
+.styled-table tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* 表格单元格样式 */
+.styled-table th, .styled-table td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+}
+
+/* 表格行悬停效果 */
+.styled-table tbody tr:hover {
+  background-color: #ddd;
+}
+
+/* 表格单元格文本对齐 */
+.styled-table td {
+  text-align: left;
+}
+
+/* 调整表格宽度 */
+.styled-table th, .styled-table td {
+  text-align: center;
+  width: 25%;
+}
