@@ -194,15 +194,12 @@
                         console.log(data);
     
                         // 获取粉丝数、名字、头像
-                        const fansCount = follower;
-                        const userName = name;
-                        const userFace = face;
+                        const fansCount = data.follower;
             
                         // 更新 HTML 元素
-                        document.getElementById('fans-count').innerText = fansCount; // 格式化数字
-                        document.getElementById('user-name').innerText = userName; // 显示名字
-                        document.getElementById('user-face').src = userFace; // 显示头像
-                    } catch (error) {
+                        document.getElementById('fans-count').innerText = fansCount; 
+                    } 
+                    catch (error) {
                         console.error('获取 B站 粉丝数失败:', error);
                         document.getElementById('fans-count').innerText = '获取失败';
                     }
