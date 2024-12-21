@@ -15,7 +15,7 @@ jobs:
 
     - name: Get Bilibili Stats
       run: |
-        curl -s "https://api.bilibili.com/x/web-interface/card?mid=2109776" | jq '{fans: .data.card.follower}' > bilibili-stats.json
+        curl -s "https://api.bilibili.com/x/web-interface/card?mid=2109776" | jq '{follower: .data.card.follower, like_num: .data.card.like_num}' > bilibili-stats.json
 
     - name: Commit and Push Bilibili Stats
       env:
