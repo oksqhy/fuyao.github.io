@@ -177,31 +177,36 @@
                 <div class="background"></div>
                 <div class="label">當前B站粉絲數</div>
                 <div class="count">
-                    <span id="fans-count">加載中...</span>
+                    <span id="fans-count">載入中...</span>
                 </div>
-                <div class="notice">數據每日更新</div>
+                <div class="notice">資料每日更新</div>
             </div>
-        
+    
             <script>
                 async function fetchFansCount() {
-                try {
-                    const response = await fetch('https://oksqhy.github.io/fuyao.github.io/bilibili-stats.json');
-                    if (!response.ok) {
-                        throw new Error(`HTTP error! status: ${response.status}`);
+                    try {
+                        const response = await fetch('https://oksqhy.github.io/fuyao.github.io/bilibili-stats.json');
+                        if (!response.ok) {
+                            throw new Error(`HTTP error! status: ${response.status}`);
+                        }
+                        const data = await response.json();
+                        console.log(data);
+    
+                        // 獲取粉絲數、名字、頭像
+                        const fansCount = data.follower;
+                        const userName = data.name;
+                        const userFace = data.face;
+            
+                        // 更新 HTML 元素
+                        document.getElementById('fans-count').innerText = fansCount.toLocaleString(); // 格式化數字
+                        document.getElementById('user-name').innerText = userName; // 顯示名字
+                        document.getElementById('user-face').src = userFace; // 顯示頭像
+                    } catch (error) {
+                        console.error('獲取 B站 粉絲數失敗:', error);
+                        document.getElementById('fans-count').innerText = '獲取失敗';
                     }
-                    const data = await response.json();
-                    console.log(data); 
-
-                    const fansCount = follower; 
-        
-                    // 更新 HTML 元素
-                    document.getElementById('fans-count').innerText = fansCount; 
-                } catch (error) {
-                    console.error('獲取 B站 粉絲數失敗:', error);
-                    document.getElementById('fans-count').innerText = '獲取失敗';
                 }
-            }
-            fetchFansCount();
+                fetchFansCount();
             </script>
         
         </div>
