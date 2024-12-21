@@ -194,12 +194,12 @@
                         console.log(data);
     
                         // 获取粉丝数、名字、头像
-                        const fansCount = data.follower;
-                        const userName = data.name;
-                        const userFace = data.face;
+                        const fansCount = follower;
+                        const userName = name;
+                        const userFace = face;
             
                         // 更新 HTML 元素
-                        document.getElementById('fans-count').innerText = fansCount.toLocaleString(); // 格式化数字
+                        document.getElementById('fans-count').innerText = fansCount; // 格式化数字
                         document.getElementById('user-name').innerText = userName; // 显示名字
                         document.getElementById('user-face').src = userFace; // 显示头像
                     } catch (error) {
