@@ -4,7 +4,6 @@ on:
   schedule:
     - cron: '0 0 * * *'  
   workflow_dispatch:  
-
 jobs:
   update-bilibili-stats:
     runs-on: ubuntu-latest
@@ -15,7 +14,7 @@ jobs:
 
     - name: Get Bilibili Stats
       run: |
-        curl -s "https://api.bilibili.com/x/web-interface/card?mid=2109776" | jq '{fans: .data.card.fans, name: .data.card.name, face: .data.card.face}' > bilibili-stats.json
+        curl -s "https://api.bilibili.com/x/relation/stat?vmid=2109776" | jq '{follower: .data.follower, name: "符瑶koritsu", face: "https://i2.hdslb.com/bfs/face/a852499163294011a52bbd8952c3a8e90f6b386a.jpg"}' > bilibili-stats.json
 
     - name: Commit and Push Bilibili Stats
       env:
@@ -25,4 +24,4 @@ jobs:
         git config user.email "github-actions[bot]@users.noreply.github.com"
         git add bilibili-stats.json
         git commit -m "Update Bilibili Stats" || echo "No changes to commit"
-        git push origin HEAD:main  
+        git push origin HEAD:main
