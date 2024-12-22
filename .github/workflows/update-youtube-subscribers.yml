@@ -1,51 +1,28 @@
-name: Fetch YouTube Subscribers
+name: Update YouTube Stats
 
 on:
   schedule:
-    - cron: '0 * * * *'  # 每小时更新一次
-  workflow_dispatch:  # 允许手动触发
+    - cron: '0 0 * * *'  # 每天午夜更新
+  workflow_dispatch:  # 手动触发工作流
 
 jobs:
-  fetch-subscribers:
+  update-youtube-stats:
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v3  
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: 20
+    - name: Get YouTube Stats
+      run: |
+        curl -s "https://www.googleapis.com/youtube/v3/channels?part=statistics&id=UCsDOGwiG7zfBX32w4AuhQkw&key=${{ secrets.YOUTUBE_API_KEY }}" | jq '{subscribers: .items[0].statistics.subscriberCount, name: "频道名", face: "频道头像链接"}' > youtube-stats.json
 
-    - name: Install dependencies
-      run: npm install node-fetch@2
-
-    - name: Fetch subscribers
+    - name: Commit and Push YouTube Stats
       env:
-        YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}  # 从 Secrets 获取 API 密钥
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
       run: |
-        node -e "
-          const fs = require('fs');
-          const fetch = require('node-fetch');
-          const apiKey = process.env.YOUTUBE_API_KEY;
-          const channelId = 'YOUR_CHANNEL_ID';  // 替换为你想查询的频道 ID
-          const url = \`https://www.googleapis.com/youtube/v3/channels?part=statistics&id=\${channelId}&key=\${apiKey}\`;
-
-          async function fetchSubscribers() {
-            const response = await fetch(url);
-            const data = await response.json();
-            const subscribers = data.items[0].statistics.subscriberCount;
-            fs.writeFileSync('./subscribers.json', JSON.stringify({ subscribers }, null, 2));
-          }
-
-          fetchSubscribers().catch(console.error);
-        "
-        
-    - name: Commit and push changes
-      run: |
-        git config --global user.name "GitHub Actions"
-        git config --global user.email "actions@github.com"
-        git add subscribers.json
-        git commit -m "Update subscribers count"
-        git push
+        git config user.name "github-actions[bot]"
+        git config user.email "github-actions[bot]@users.noreply.github.com"
+        git add youtube-stats.json
+        git commit -m "Update YouTube Stats" || echo "No changes to commit"
+        git push origin HEAD:main
