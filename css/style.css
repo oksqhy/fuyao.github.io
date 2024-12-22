@@ -10054,7 +10054,7 @@ h6,
 }
 
 .bilibili-fan .label {
-  font-size: 1.5rem; 
+  font-size: 1.25rem; 
   font-weight: 400; 
   color: black; 
   transition: transform 0.3s ease; 
@@ -10062,7 +10062,7 @@ h6,
 }
 
 .bilibili-fan .count {
-  font-size: 3.75rem; 
+  font-size: 3rem; 
   font-weight: 600; 
   color: #493573; 
   animation: countAnimation 0.3s ease; 

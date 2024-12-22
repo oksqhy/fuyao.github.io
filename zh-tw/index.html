@@ -82,7 +82,7 @@
     <!-- header start -->
     <header>
         <div class="fy-notice">
-            <a>喜報！本網站已被符瑤Koritsu本人光臨<span class="strikethrough">並視奸</span>！</a>
+            <a>如果真愛有形狀，那一定是符瑤的模樣。</a>
             <button class="close-btn" onclick="closeNotice()">×</button>
         </div>
         <script>
@@ -175,11 +175,15 @@
             </div>
             <div class="bilibili-fan font-weight-bold">
                 <div class="background"></div>
-                <div class="label">當前B站粉絲數</div>
+                <div class="label">當前B站訂閱數</div>
                 <div class="count">
-                    <span id="fans-count">載入中...</span>
+                    <span id="fans-count">加載中...</span>
                 </div>
-                <div class="notice">資料每日更新</div>
+                <div class="label">當前YouTube訂閱數</div>
+                <div class="count">
+                    <span id="subscribers-count">加載中...</span>
+                </div>
+                <div class="notice">數據每日更新</div>
             </div>
     
             <script>
@@ -192,18 +196,41 @@
                         const data = await response.json();
                         console.log(data);
     
-                         // 获取粉丝数、名字、头像
-                         const fansCount = data.follower;
+                        // 獲取粉絲數
+                        const fansCount = data.follower;
             
                         // 更新 HTML 元素
                         document.getElementById('fans-count').innerText = fansCount; 
-                        
-                    } catch (error) {
+                    } 
+                    catch (error) {
                         console.error('獲取 B站 粉絲數失敗:', error);
                         document.getElementById('fans-count').innerText = '獲取失敗';
                     }
                 }
                 fetchFansCount();
+
+                async function fetchSubscribersCount() {
+                    try {
+                        const response = await fetch('https://oksqhy.github.io/fuyao.github.io/youtube-stats.json');
+                        if (!response.ok) {
+                            throw new Error(`HTTP error! status: ${response.status}`);
+                        }
+                        const data = await response.json();
+                        console.log(data);
+            
+                        // 獲取訂閱數
+                        const subscribersCount = data.subscribers;
+            
+                        // 更新 HTML 元素
+                        document.getElementById('subscribers-count').innerText = subscribersCount;
+                        
+                    } 
+                    catch (error) {
+                        console.error('獲取 YouTube 訂閱數失敗:', error);
+                        document.getElementById('subscribers-count').innerText = '獲取失敗';
+                    }
+                }
+                fetchSubscribersCount();
             </script>
         
         </div>
@@ -332,7 +359,7 @@
                 <h3 class="mb-4 font-weight-bold">關於本站&聲明：</h3>
                 <p class="font-weight-regular">本站是由符導員創建的符瑤Koritsu應援站，屬於對符瑤Koritsu形象的二次創作，內容不代表符瑤Koritsu本人立場。符瑤Koritsu的虛擬形象與相關圖片的版權歸符瑤本人和其他相關創作者所有。</p>
                 <p class="font-weight-regular">本站遵循CC BY-NC-SA（署名-非商業性使用-相同方式共享）協議。在署名原作者且遵循相同協議的情況下，可以非商業性的使用。</p>
-                <p class="font-weight-regular"> 如果你希望共同參與網站內容的構建和維護，請聯繫站長<a class="text-dark" href= "https://space.bilibili.com/258789825">@Hechiam無雙大絲瓜</a> 。</p> 
+                <p class="font-weight-regular">本站由Github Pages + Vercel託管。如果你希望共同參與網站內容的構建和維護，請聯繫站長<a class="text-dark" href= "https://space.bilibili.com/258789825">@Hechiam無雙大絲瓜</a> 。</p> 
                 <p class="font-weight-regular">繁體中文頁面由Opencc轉換。</p>
                 <p class="font-weight-regular">*Telegram非官方直播通知頻道</p>
             </div>
