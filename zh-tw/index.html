@@ -7,7 +7,7 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta property="og:title" content="符瑤Koritsu應援站——符瑤烤栗子 ☁ 燒烤攤">
     <meta property="og:description" content="由符導員的愛組成的符瑤應援網站。香香軟軟的小男娘誰不愛呢? 關注符瑤Koritsu喵! 關注符瑤Koritsu謝謝喵!">
-    <meta name="keywords" content="符瑤, 符瑤, Koritsu, 符瑤Koritsu, B站, 虛擬主播, Vup, Vtuber, 應援, 直播, 直播應援站, 符瑤粉絲，男娘">
+    <meta name="keywords" content="符瑤, 符瑤, Koritsu, 符瑤Koritsu, 博客, B站, 虛擬主播, Vup, Vtuber, 應援, 直播, 直播應援站, 符瑤粉絲，男娘">
     <meta property="og:image" content="img/fuyaoicon"> 
     <meta property="og:type" content="website">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -187,6 +187,13 @@
             </div>
     
             <script>
+                function formatToWan(number) {
+                    if (number >= 10000) {
+                        return (number / 10000).toFixed(2) + 'w';
+                    }
+                    return number; // 如果小于一万，直接返回原始值
+                }
+            
                 async function fetchFansCount() {
                     try {
                         const response = await fetch('https://oksqhy.github.io/fuyao.github.io/bilibili-stats.json');
@@ -195,20 +202,23 @@
                         }
                         const data = await response.json();
                         console.log(data);
-    
-                        // 獲取粉絲數
+            
+                        // 获取粉丝数
                         const fansCount = data.follower;
             
+                        // 格式化
+                        const formattedFansCount = formatToWan(fansCount);
+            
                         // 更新 HTML 元素
-                        document.getElementById('fans-count').innerText = fansCount; 
+                        document.getElementById('fans-count').innerText = formattedFansCount;
                     } 
                     catch (error) {
-                        console.error('獲取 B站 粉絲數失敗:', error);
-                        document.getElementById('fans-count').innerText = '獲取失敗';
+                        console.error('获取 B站 粉丝数失败:', error);
+                        document.getElementById('fans-count').innerText = '获取失败';
                     }
                 }
                 fetchFansCount();
-
+            
                 async function fetchSubscribersCount() {
                     try {
                         const response = await fetch('https://oksqhy.github.io/fuyao.github.io/youtube-stats.json');
@@ -218,20 +228,23 @@
                         const data = await response.json();
                         console.log(data);
             
-                        // 獲取訂閱數
+                        // 获取订阅数
                         const subscribersCount = data.subscribers;
             
+                        // 格式化
+                        const formattedSubscribersCount = formatToWan(subscribersCount);
+            
                         // 更新 HTML 元素
-                        document.getElementById('subscribers-count').innerText = subscribersCount;
-                        
+                        document.getElementById('subscribers-count').innerText = formattedSubscribersCount;
                     } 
                     catch (error) {
-                        console.error('獲取 YouTube 訂閱數失敗:', error);
-                        document.getElementById('subscribers-count').innerText = '獲取失敗';
+                        console.error('获取 YouTube 订阅数失败:', error);
+                        document.getElementById('subscribers-count').innerText = '获取失败';
                     }
                 }
                 fetchSubscribersCount();
             </script>
+            
         
         </div>
     </div>
