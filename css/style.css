@@ -10443,7 +10443,7 @@ body {
 .banner {
   position: relative;
   height: 250px; /* 控制纵向的高度 */
-  background-image: url('../img/background.webp'); /* 背景图片路径 */
+  background-image: url('../img/background1a.webp'); /* 背景图片路径 */
   background-size: cover;
   background-position: center;
   display: flex;
