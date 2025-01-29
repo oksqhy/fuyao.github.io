@@ -34,11 +34,7 @@
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
     <style>
-        body {
-            font-family: sans-serif;
-        }
-
-        #home {
+      #home {
             position: relative;
             background: url('img/background1.webp') no-repeat center center;
             background-size: cover;
@@ -55,23 +51,6 @@
             background: rgba(0, 0, 0, 0.75); /* 半透明黑色 */
             z-index: 1;
         }
-
-        .content {
-            position: relative;
-            z-index: 2; /* 确保内容在黑色覆盖层之上 */
-        }
-
-        .white-box {
-            background: rgba(255, 255, 255, 0.8); /* 半透明白色 */
-            border-radius: 50px; /* 较大的圆角 */
-            padding: 30px; /* 增加内边距 */
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        /* 按钮样式 */
-        .btn {
-            margin: 0 10px;
-        } 
 
     </style>
     <!-- CSP 设置 -->
@@ -92,9 +71,9 @@
         </script>
         <div class="header-content">
             <a href="https://xnn.fuyao.moe" target="_blank"> 
-                <img src="img/fuyaologo.webp" alt="Logo" class="logo">
+                <img src="img/fuyaologo.webp" alt="Logo" title="符瑶烤栗子 ☁ 烧烤摊-主页" class="logo">
             </a>
-            <button class="lang-toggle-btn" id="langToggle">简/繁</button>
+            <button class="lang-toggle-btn" title="简体/繁体中文切换" id="langToggle">简/繁</button>
         </div>
         <script>
             document.getElementById('langToggle').addEventListener('click', function() {
@@ -104,6 +83,7 @@
     </header>
       <!-- header end -->
     
+
     <div class="container-fluid bg-primary d-flex align-items-center mb-5 py-5" id="home">
         <div class="container content">
             <div class="row align-items-center">
@@ -159,44 +139,57 @@
                         </script>
                         
                         <div class="d-flex align-items-center justify-content-center">
-                            <a href="https://space.bilibili.com/2109776/" class="fy-button font-weight-bold" id="Bilibili">
+                            <a href="https://space.bilibili.com/2109776/" class="fy-button font-weight-bold" title="哔哩哔哩动画" id="Bilibili">
                                 Bilibili <img src="img/iconbili.webp">
                             </a>
-                            <a href="https://www.youtube.com/@yaofu-yb1mx" class="fy-button font-weight-bold" id="Youtube">
+                            <a href="https://www.youtube.com/@yaofu-yb1mx" class="fy-button font-weight-bold" title="Youtube" id="Youtube">
                                 Youtube <img src="img/iconut.webp">
                             </a>
                         </div>
+
                         <div class="d-flex align-items-center justify-content-center">    
                             
-                            <a href="https://t.me/fuyaokoritsu/" class="fy-button font-weight-bold" id="Telegram">
+                            <a href="https://t.me/fuyaokoritsu/" class="fy-button-s font-weight-bold" title="Telegram非官方直播通知频道" id="Telegram">
                                 <img src="img/icontg.webp">* 
                             </a>
-                            <a href="https://onlyfans.com/u474156005" class="fy-button font-weight-bold" id="OnlyFans">
+                            <a href="https://onlyfans.com/u474156005" class="fy-button-s font-weight-bold" title="OnlyFans" id="OnlyFans">
                                 <img src="img/iconof.webp">
                             </a>
-                            <a href="https://weibo.com/u/5342789422" class="fy-button font-weight-bold" id="Weibo">
+                            <a href="https://weibo.com/u/5342789422" class="fy-button-s font-weight-bold" title="微博" id="Weibo">
                                 <img src="img/iconwb.webp">
                             </a>
-                            <a href="https://www.douyin.com/user/MS4wLjABAAAAnLh_tIRha-i0Tcy5YOljgLM18qCVhrlQ5n4duJ1iHSw6iSCsxEtce90zLYgEd52y" class="fy-button font-weight-bold" id="Douyin">
+                            <a href="https://www.douyin.com/user/MS4wLjABAAAAnLh_tIRha-i0Tcy5YOljgLM18qCVhrlQ5n4duJ1iHSw6iSCsxEtce90zLYgEd52y" class="fy-button-s font-weight-bold" title="抖音" id="Douyin">
                                 <img src="img/icondy.webp">
                             </a>
                         </div>
-                       
+                        
+                        
                     </div>
+                    <div class="white-box" style="margin-top: 1rem;">
+                        <div class="text-center">
+                            <div class="row bilibili-fan font-weight-bold justify-content-center">
+                                <div style="padding: 0rem 1rem">
+                                    <div class="label">当前B站订阅数</div>
+                                    <div class="count">
+                                        <span id="fans-count">加载中...</span>
+                                    </div>
+                                </div>
+                                <div style="padding: 0rem 1rem">
+                                    <div class="label">当前YouTube订阅数</div>
+                                    <div class="count">
+                                        <span id="subscribers-count">加载中...</span>
+                                    </div>
+                                </div>  
+                            </div>
+                            <div class="bilibili-fan">
+                                <a class="notice">数据每日更新</a>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
-            <div class="bilibili-fan font-weight-bold">
-                <div class="background"></div>
-                <div class="label">当前B站订阅数</div>
-                <div class="count">
-                    <span id="fans-count">加载中...</span>
-                </div>
-                <div class="label">当前YouTube订阅数</div>
-                <div class="count">
-                    <span id="subscribers-count">加载中...</span>
-                </div>
-                <div class="notice">数据每日更新</div>
-            </div>
+        
     
             <script>
                 function formatToWan(number) {
@@ -425,6 +418,8 @@
           
         <p class="font-weight-light" style="display: inline; margin: 0;"> 
             <a href="https://icp.gov.moe/?keyword=20250130" target="_blank" style="color: white !important;">萌ICP备20250130号</a>
+            <a style="text-decoration:none;color:#51c4d3;" href="https://travel.moe/go.html" title="异次元之旅-跃迁-我们一起去萌站成员的星球旅行吧！" target="_blank">
+                <img src="https://travel.moe/images/icon/icon64.png" style="width:24px;height:24px">异次元之旅</a>
         </p>
         <p class="m-0" style="display: inline; margin-left: 10px;">&copy; 
             <a class="text-white font-weight-bold" href="https://368326.xyz">Hechima的后花园</a>
