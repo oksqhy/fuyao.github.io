@@ -10306,7 +10306,7 @@ header {
 }
 
 .grid-container div {
-  flex: 0 0 18.75rem; /* 设置固定宽度 */
+  flex: 0 0 220px; /* 设置固定宽度 */
   margin: 0 1.5rem 1.5rem 0;
   display: flex; /* 使用 Flexbox 以便于处理内部元素 */
   flex-direction: column; /* 垂直排列内部元素 */
@@ -10329,7 +10329,7 @@ header {
   transition: all 0.25s ease-in-out;
 }
 .grid-container div p {
-  margin: 0.3125rem 0;
+  margin: 4px 8px;
   padding: 0;
   text-align: center;
 }
@@ -10343,6 +10343,7 @@ header {
   font-weight: 300;
   font-size: 1em;
   color: #dfdfdf;
+  margin: 10px;
 }
 
 .strikethrough {
@@ -10563,3 +10564,28 @@ body {
   width: 25%;
 }
 
+.color-palette {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding-left: 4px;
+}
+
+.color-box {
+  width: 70px;
+  height: 30px;
+  border: 2px solid #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 12px;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+.color-box span {
+  margin-top: 5px;
+  font-size: 10px;
+  color: #ccc;
+}
