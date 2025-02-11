@@ -2,6 +2,6 @@
 
 # 符瑶烤栗子☁️烧烤摊
 
-进入主页：[xnn.fuyao.moe](2109776/)
+进入主页：https://xnn.fuyao.moe/
 
 开播提醒&B站动态：https://t.me/fuyaokoritsu/
