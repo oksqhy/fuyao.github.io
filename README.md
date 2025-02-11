@@ -4,4 +4,4 @@
 
 进入主页：[xnn.fuyao.moe](2109776/)
 
-开播提醒&B站动态：[https://t.me/fuyaokoritsu/]
+开播提醒&B站动态：https://t.me/fuyaokoritsu/
