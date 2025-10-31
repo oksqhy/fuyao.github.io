@@ -10306,7 +10306,7 @@ header {
 }
 
 .grid-container div {
-  flex: 0 0 220px; /* 设置固定宽度 */
+  flex: 0 0 280px; /* 设置固定宽度 */
   margin: 0 1.5rem 1.5rem 0;
   display: flex; /* 使用 Flexbox 以便于处理内部元素 */
   flex-direction: column; /* 垂直排列内部元素 */
