@@ -1,0 +1,983 @@
+:root {
+    /* 高级感配色：莫兰迪紫系 */
+    --primary-hue: 270;
+    --bg-color: #f9f7fc;              /* 极淡的灰紫背景 */
+    --surface-color: #ffffff;         /* 卡片纯白 */
+    --accent-color: #9d84b7;          /* 主题紫，低饱和度 */
+    --accent-deep: #6a4c93;           /* 深紫色文字 */
+    --text-main: #464646;             /* 深灰主字 */
+    --text-light: #888888;            /* 浅灰副字 */
+    
+    /* 字体修改：现代非衬线体 (Sans-Serif) */
+    /* 优先使用系统默认的高级黑体，不仅加载最快，而且现代感最强 */
+    --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    
+    /* 阴影质感 */
+    --shadow-soft: 0 10px 40px -10px rgba(157, 132, 183, 0.15);
+    --shadow-hover: 0 20px 50px -10px rgba(157, 132, 183, 0.3);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.7;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* --- 背景氛围光斑 --- */
+.bg-orb {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: -1;
+    opacity: 0.4;
+}
+.orb-1 {
+    width: 500px;
+    height: 500px;
+    background: #e0c3fc;
+    top: -100px;
+    left: -100px;
+}
+.orb-2 {
+    width: 400px;
+    height: 400px;
+    background: #cbb4d4;
+    bottom: 0;
+    right: -50px;
+}
+
+/* --- 导航栏 --- */
+.glass-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 15px 0;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    z-index: 1000;
+    transition: 0.3s;
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 25px;
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--accent-deep);
+    letter-spacing: 1px;
+}
+
+nav a {
+    margin-left: 25px;
+    color: var(--text-main);
+    font-size: 0.95rem;
+    font-weight: 500;
+    position: relative;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-color);
+    transition: 0.3s;
+}
+
+nav a:hover { color: var(--accent-color); }
+nav a:hover::after { width: 100%; }
+
+/* --- Hero Section --- */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    padding-top: 60px;
+}
+
+.avatar-wrapper {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.avatar {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    position: relative;
+    z-index: 2;
+    border: 3px solid white;
+    box-shadow: var(--shadow-soft);
+}
+
+.avatar-ring {
+    position: absolute;
+    top: -10px; left: -10px; right: -10px; bottom: -10px;
+    border: 1px solid rgba(157, 132, 183, 0.3);
+    border-radius: 50%;
+    z-index: 1;
+    animation: spin 20s linear infinite;
+}
+
+@keyframes spin { 100% { transform: rotate(360deg); } }
+
+.site-title {
+    font-size: 3rem;
+    font-weight: heavy;
+    color: var(--accent-deep);
+    margin-bottom: 10px;
+}
+.site-title span { font-size: 1.5rem; opacity: 0.6; font-weight: 300; }
+
+.subtitle {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    margin-bottom: 45px;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+/* 社交按钮 */
+.main-socials {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 35px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.social-pill {
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 10px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: var(--shadow-soft);
+    transition: 0.3s ease;
+    min-width: 160px;
+    border: 1px solid rgba(255,255,255,0.5);
+}
+
+.social-pill:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+}
+
+.social-pill i {
+    font-size: 1.8rem;
+    margin-right: 15px;
+}
+
+.social-pill.bilibili i { color: #00aeec; }
+.social-pill.youtube i { color: #ff0000; }
+
+.social-info {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.social-info .label { font-size: 0.75rem; color: #999; text-transform: uppercase; }
+.social-info .count { font-size: 1rem; font-weight: bold; color: var(--text-main); }
+
+/* 小图标栏 */
+/* --- 次要社交媒体图标 (居中修复) --- */
+.sub-socials {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center; /* 关键：让图标水平居中 */
+    flex-wrap: wrap;         /* 防止屏幕极小时溢出 */
+    width: 100%;             /* 确保容器占满宽度，从而能够居中 */
+    margin-top: 10px;        /* 微调与上方大按钮的间距 */
+}
+
+.icon-btn {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    border-radius: 50%;
+    color: var(--text-light);
+    font-size: 1.2rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+    transition: 0.3s;
+}
+
+.icon-btn:hover {
+    background: var(--accent-color);
+    color: white;
+    transform: scale(1.1);
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.8rem;
+    color: var(--text-light);
+    opacity: 0.6;
+}
+
+/* --- 通用 Layout --- */
+.container { max-width: 1100px; margin: 0 auto; padding: 0 25px; }
+.section-padding { padding: 100px 0; }
+.text-center { text-align: center; }
+
+.section-tag {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--accent-color);
+    margin-bottom: 10px;
+}
+
+h2 { font-size: 2rem; color: var(--text-main); margin-bottom: 40px; font-weight: normal; }
+
+/* --- About Section --- */
+.about-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.about-img-box { position: relative; }
+.about-img-box img {
+    width: 100%;
+    border-radius: 12px;
+    position: relative;
+    z-index: 2;
+    box-shadow: var(--shadow-soft);
+}
+.img-backdrop {
+    position: absolute;
+    top: 20px; left: 20px;
+    width: 100%; height: 100%;
+    background: var(--accent-color);
+    opacity: 0.1;
+    border-radius: 12px;
+    z-index: 1;
+}
+
+.description { font-size: 1.05rem; color: #666; text-align: justify; }
+
+/* --- Blog Preview (New) --- */
+.bg-pale { background: rgba(255,255,255,0.4); }
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.blog-card {
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+    transition: 0.3s;
+    border: 1px solid rgba(0,0,0,0.02);
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.card-date {
+    font-family: sans-serif; /* 日期用无衬线体更清晰 */
+    color: var(--accent-color);
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+.card-date .day { font-size: 1.5rem; display: block; line-height: 1; }
+.card-date .month { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; }
+
+.card-content h3 { font-size: 1.2rem; margin-bottom: 10px; }
+.card-content h3 a:hover { color: var(--accent-color); }
+
+.card-content p {
+    font-size: 0.95rem;
+    color: #777;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    flex-grow: 1;
+}
+
+.read-more {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: var(--text-main);
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+.read-more:hover { color: var(--accent-color); }
+
+.center-btn { text-align: center; margin-top: 20px; }
+.btn-outline {
+    display: inline-block;
+    padding: 10px 30px;
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
+    border-radius: 30px;
+    font-size: 0.9rem;
+}
+.btn-outline:hover { background: var(--accent-color); color: white; }
+
+/* --- Showcase (Gallery) --- */
+/* --- 橱窗区域 (Showcase) 优化版 --- */
+
+.gallery-grid {
+    display: grid;
+    /* 响应式核心：卡片最小280px，空间不够自动换行，空间够自动拉伸 */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 10px;
+}
+
+.model-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    /* 确保卡片在不同设备上看起来比较方正或长条适中 */
+    display: flex;
+    flex-direction: column;
+}
+
+.model-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
+}
+
+.model-img {
+    width: 100%;
+    /* 桌面端默认高度：增加高度以展示更多立绘细节 */
+    height: 450px; 
+    position: relative;
+    overflow: hidden;
+    background-color: #f0f0f0; /* 图片加载前的占位色 */
+}
+
+.model-img img {
+    width: 100%;
+    height: 100%;
+    /* 核心修改 1: 保持比例填满容器 */
+    object-fit: cover;
+    /* 核心修改 2: 重点！强制对齐顶部，裁切底部 */
+    object-position: top center; 
+    transition: transform 0.6s ease;
+}
+
+/* 鼠标悬停时的放大效果 */
+.model-card:hover .model-img img {
+    transform: scale(1.03);
+}
+
+.model-info {
+    padding: 20px 25px;
+    text-align: center;
+    background: white;
+    z-index: 2;
+}
+
+.model-info h4 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    color: var(--text-main);
+    font-weight: bold;
+}
+
+.credit {
+    font-size: 0.85rem;
+    color: #999;
+    font-family: sans-serif;
+}
+
+/* --- 移动端专门适配 --- */
+@media (max-width: 768px) {
+    .gallery-grid {
+        gap: 20px;
+        /* 手机端防止两列太挤，设置倾向于单列 */
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    .model-img {
+        /* 手机端高度稍微减小，避免一屏滑不完 */
+        height: 400px;
+    }
+}
+
+/* --- SVG 图标样式修正 --- */
+
+/* 1. 确保所有 SVG 继承文字颜色 */
+svg {
+    display: inline-block;
+    vertical-align: middle;
+    /* 这里的 fill="currentColor" 在 HTML 里已经写了，这里是双重保险 */
+    fill: currentColor; 
+}
+
+/* 2. 调整主要社交按钮中的图标位置 */
+.social-pill svg {
+    margin-right: 15px;
+    /* B站原本是蓝色，油管是红色，但我们希望默认是图标色 */
+    /* 我们保持HTML里的 currentColor，让外部css控制 */
+}
+
+
+.social-pill.bilibili svg { color: #00aeec; }
+.social-pill.youtube svg { color: #ff0000; }
+.social-pill .label { color: #999; }
+.social-pill .count { color: var(--text-main); }
+
+
+/* 3. 调整次要社交图标 (小圆圈) */
+.icon-btn {
+    /* 确保 Flex 居中对 SVG 有效 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-light); /* 默认灰色 */
+}
+
+.icon-btn:hover {
+    background: var(--accent-color);
+    color: white; /* 悬停时变白 */
+    transform: scale(1.1);
+}
+/* --- 全新页脚样式 (复刻参考图) --- */
+
+/* --- 全新现代极简页脚 --- */
+
+.site-footer {
+    /* 玻璃态背景，与顶部导航呼应，但更浅 */
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(255, 255, 255, 0.6);
+    padding: 80px 0 40px;
+    margin-top: 80px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 三列布局 */
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr; /* 左侧宽，右侧窄 */
+    gap: 60px;
+    margin-bottom: 60px;
+}
+
+/* 左侧：品牌 */
+.footer-logo {
+    font-family: var(--font-main);
+    font-size: 1.8rem;
+    font-weight: 800; /* 极粗字体 */
+    color: var(--accent-deep);
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+}
+
+.footer-desc {
+    font-size: 0.95rem;
+    color: var(--text-main);
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+.license-text {
+    font-size: 0.85rem;
+    color: #999;
+    line-height: 1.6;
+}
+
+.license-text a {
+    color: var(--accent-color);
+    border-bottom: 1px dashed var(--accent-color);
+}
+
+/* 标题通用样式 */
+.footer-heading {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #aaa;
+    margin-bottom: 25px;
+    font-weight: bold;
+}
+
+/* 中间：链接列表 */
+.link-list li {
+    margin-bottom: 12px;
+}
+
+.link-list a {
+    color: var(--text-main);
+    font-size: 0.95rem;
+    transition: 0.2s;
+}
+
+.link-list a:hover {
+    color: var(--accent-color);
+    padding-left: 5px; /* 悬停微动 */
+}
+
+.runtime-display {
+    margin-bottom: 20px;
+    font-family: Noto-sans;
+    color: var(--accent-deep);
+    background: rgba(157, 132, 183, 0.1);
+    padding: 8px 15px;
+    border-radius: 8px;
+    display: inline-block;
+    font-size: 0.9rem;
+}
+
+.runtime-display i { margin-right: 8px; }
+
+/* 右侧：圆形色卡 */
+.palette-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.color-dot-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.color-dot {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.color-code {
+    font-size: 0.8rem;
+    color: #999;
+    font-family: monospace;
+}
+
+/* 底部版权 */
+.footer-copyright {
+    text-align: center;
+    padding-top: 40px;
+    border-top: 1px solid rgba(0,0,0,0.05);
+    color: #ccc;
+    font-size: 0.85rem;
+}
+
+/* 响应式：手机端变为单列 */
+@media (max-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .footer-logo { font-size: 1.5rem; }
+}
+
+/* --- 移动端与平板适配修复 --- */
+@media (max-width: 900px) {
+    
+    /* 1. 关于区域：强制单列布局 (图片在上，文字在下) */
+    .about-layout {
+        display: flex !important;      /* 强制使用 Flex 布局 */
+        flex-direction: column;        /* 垂直排列 */
+        gap: 30px;                     /* 间距缩小 */
+        text-align: center;            /* 文字居中，手机上看更舒服 */
+    }
+
+    /* 图片区域宽度占满 */
+    .about-img-box {
+        width: 100%;
+        max-width: 400px; /* 限制图片最大宽度，防止太傻大 */
+        margin: 0 auto;   /* 居中 */
+    }
+
+    /* 文字区域 */
+    .about-content {
+        padding: 0 10px;
+    }
+    
+    /* 文字左对齐还是居中看你喜好，如果喜欢左对齐，取消下面这行 */
+    .description {
+        text-align: justify; /* 两端对齐，看起来更整齐 */
+    }
+
+    /* 2. 修复主页大标题字体过大 */
+    .site-title {
+        font-size: 2.5rem; 
+    }
+    
+    /* 3. 修复导航栏内边距 */
+    .nav-content {
+        padding: 0 20px;
+    }
+    
+    /* 4. 修复社交按钮排列 */
+    .main-socials {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .social-pill {
+        width: 100%; /* 按钮撑满宽度 */
+        justify-content: center;
+    }
+}
+
+/* =========================================
+   文章详情页样式 (Blog Post Styles)
+   ========================================= */
+
+/* 布局容器 */
+.article-page {
+    padding-top: 120px; /* 避开导航栏 */
+    padding-bottom: 60px;
+    min-height: 80vh;
+}
+
+.post-container {
+    max-width: 800px; /* 限制文章宽度，利于阅读 */
+    margin: 0 auto;
+    padding: 0 25px;
+    background: rgba(255, 255, 255, 0.6); /* 微微的白色背景 */
+    backdrop-filter: blur(10px);
+    border-radius: 24px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.03);
+}
+
+/* 头部标题区 */
+.post-header {
+    padding: 60px 0 40px;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    margin-bottom: 40px;
+}
+
+.post-meta {
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.post-meta .tag {
+    background: var(--accent-color);
+    color: white;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.post-title {
+    font-size: 2.2rem;
+    color: var(--accent-deep);
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.post-subtitle {
+    font-size: 1.1rem;
+    color: #888;
+    font-weight: 300;
+}
+
+/* 正文排版 */
+.post-content {
+    font-size: 1.05rem;
+    line-height: 1.9;
+    color: #555;
+    padding-bottom: 60px;
+}
+
+.post-content p {
+    margin-bottom: 25px;
+    text-align: justify;
+}
+
+.post-content h3 {
+    font-size: 1.5rem;
+    color: var(--accent-deep);
+    margin: 40px 0 20px;
+    border-left: 4px solid var(--accent-color);
+    padding-left: 15px;
+}
+
+/* 引用高亮框 */
+.highlight-box {
+    background: #f4eff9; /* 极淡紫色 */
+    border-radius: 12px;
+    padding: 25px;
+    margin: 30px 0;
+    border-left: 5px solid var(--accent-color);
+    color: var(--text-main);
+}
+
+/* 图片样式 */
+.article-img {
+    margin: 40px 0;
+    text-align: center;
+}
+
+.article-img img {
+    max-width: 100%;
+    border-radius: 12px;
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.3s;
+}
+
+.article-img img:hover {
+    transform: scale(1.02);
+}
+
+.article-img figcaption {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #999;
+    font-style: italic;
+}
+
+/* 表格样式 (针对新的紫色风格优化) */
+.table-wrapper {
+    overflow-x: auto; /* 手机端可横向滚动 */
+    margin: 40px 0;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    min-width: 600px; /* 防止手机端挤压 */
+}
+
+.data-table thead {
+    background: var(--accent-color);
+    color: white;
+}
+
+.data-table th, .data-table td {
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.data-table tbody tr:hover {
+    background-color: #fafafa;
+}
+
+/* 分数徽章 */
+.badge {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: white;
+}
+.badge-bad { background: #999; }
+.badge-poor { background: #7fb1d4; }
+.badge-normal { background: #aeb4b9; }
+.badge-good { background: var(--accent-color); }
+.badge-excellent { background: #ff6b6b; }
+
+/* 底部按钮 */
+.article-footer-btn {
+    text-align: center;
+    margin-top: 60px;
+    padding-top: 40px;
+    border-top: 1px dashed #ddd;
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+    .post-title { font-size: 1.8rem; }
+    .post-container { padding: 0 20px; border-radius: 0; background: transparent; box-shadow: none; }
+}
+/* =========================================
+   Blog: Gender & Nakanohito Page Styles
+   ========================================= */
+
+/* 删除线样式 (对应 .strikethrough) */
+.strike {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 0.9em;
+    margin-left: 5px;
+}
+
+/* 强调文本 */
+.emphasis-text {
+    font-size: 1.2rem;
+    color: var(--accent-deep);
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.6;
+}
+
+/* 左右图文布局块 */
+.content-block {
+    margin-bottom: 40px;
+}
+
+.block-layout {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+/* 图片在右侧，文字在左侧 (默认) */
+.block-text {
+    flex: 1;
+}
+
+.block-img {
+    flex: 0.8; /* 图片稍微小一点 */
+    text-align: center;
+}
+
+.block-img img {
+    width: 100%;
+    max-width: 300px; /* 限制图片最大宽度，特别是竖图 */
+    border-radius: 16px;
+    box-shadow: var(--shadow-soft);
+    transition: 0.3s;
+}
+
+.block-img img:hover {
+    transform: scale(1.02) rotate(1deg);
+}
+
+.block-img figcaption {
+    margin-top: 10px;
+    font-size: 0.85rem;
+    color: #888;
+}
+
+/* 如果想要图片在左侧，文字在右侧 (反转) */
+/* 在 HTML 里加 class="reverse" 即可 */
+.block-layout.reverse {
+    flex-direction: row-reverse;
+}
+
+/* 分割线 */
+.divider-line {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(157, 132, 183, 0.3), transparent);
+    margin: 50px 0;
+}
+
+/* 友情链接卡片网格 */
+.friend-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-top: 50px;
+}
+
+.link-card {
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+    border: 1px solid rgba(0,0,0,0.02);
+    transition: 0.3s;
+}
+
+.link-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--accent-color);
+}
+
+.link-card img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+    border: 2px solid #f0f0f0;
+}
+
+.link-info h4 {
+    font-size: 1rem;
+    color: var(--text-main);
+    margin-bottom: 2px;
+    font-weight: bold;
+}
+
+.link-info p {
+    font-size: 0.8rem;
+    color: #999;
+    margin-bottom: 0; /* 覆盖默认p的margin */
+}
+
+/* --- 移动端适配 --- */
+@media (max-width: 768px) {
+    .block-layout, 
+    .block-layout.reverse {
+        flex-direction: column; /* 手机上全部垂直排列 */
+        text-align: left;
+        gap: 25px;
+    }
+
+    .block-img {
+        width: 100%;
+    }
+    
+    .block-img img {
+        max-width: 80%; /* 手机上图片不要太满 */
+    }
+}

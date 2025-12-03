@@ -7,23 +7,20 @@
             |___/                                                     
 
 -->
-
 <!DOCTYPE html>
 <html lang="zh-CN">
-
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>符瑶koritsu——符瑶烤栗子 ☁ 烧烤摊</title>
+    <link rel="stylesheet" href="style.css">
+
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta property="og:title" content="符瑶koritsu应援站 - 符瑶烤栗子 ☁ 烧烤摊">
     <meta property="og:description" content="由粉丝们的爱组成的符瑶koritsu应援网站，香香软软的小男娘谁不爱呢? 关注符瑶koritsu喵! 关注符瑶koritsu谢谢喵!">    
     <meta name="keywords" content="符瑶, 符瑤, koritsu, 符瑶koritsu, 博客, B站, 虚拟主播, Vup, Vtuber, 应援, 直播, 直播应援站, 符瑶粉丝，男娘">
     <meta property="og:image" content="img/fuyaoicon"> 
     <meta property="og:type" content="website">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-    <link rel="alternate" href="https://xnn.fuyao.moe/" hreflang="zh-Hans" />
-    <link rel="alternate" href="https://xnn.fuyao.moe/zh-tw/" hreflang="zh-Hant" />
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-N4WDBG034C"></script>
@@ -40,454 +37,368 @@
     <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
     <link rel="manifest" href="favicon/site.webmanifest">
-    
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
-    <style>
-      #home {
-            position: relative;
-            background: url('img/background1.webp') no-repeat center center;
-            background-size: cover;
-            min-height: 100vh;
-        }
-
-        #home::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.75); /* 半透明黑色 */
-            z-index: 1;
-        }
-
-    </style>
-    <!-- CSP 设置 -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self' https://oksqhy.github.io; style-src 'self' 'unsafe-inline' https://giscus.app; script-src 'self' 'unsafe-inline' https://giscus.app; frame-src 'self' https://giscus.app;">
 </head>
-
 <body>
-      <!-- header start -->
-    <header>
- <!--
-        <div class="fy-notice">
-            <a>通知</a>
-            <button class="close-btn" onclick="closeNotice()">×</button>
+
+    <!-- 背景光斑装饰 (增加氛围感) -->
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+
+    <!-- 导航栏 -->
+    <header class="glass-nav">
+        <div class="container nav-content">
+            <a href="#" class="logo">符瑶烤栗子 ☁ 烧烤摊</a>
+            <nav>
+                <a href="#hero">主页</a>
+                <a href="#about">关于</a>
+                <a href="#blog-preview">文章</a>
+                <a href="#showcase">橱窗</a>
+            </nav>
         </div>
--->
-        <script>
-            function closeNotice() {
-            document.querySelector('.fy-notice').style.display = 'none';
-        }
-        </script>
-        <div class="header-content">
-            <a href="https://xnn.fuyao.moe" target="_blank"> 
-                <img src="img/fuyaologo.webp" alt="Logo" title="符瑶烤栗子 ☁ 烧烤摊-主页" class="logo">
-            </a>
-            <button class="lang-toggle-btn" title="简体/繁体中文切换" id="langToggle">简/繁</button>
-        </div>
-        <script>
-            document.getElementById('langToggle').addEventListener('click', function() {
-            window.location.href = 'zh-tw/index.html'; 
-            });
-        </script>
     </header>
-      <!-- header end -->
-    
 
-    <div class="container-fluid bg-primary d-flex align-items-center mb-5 py-5" id="home">
-        <div class="container content">
-            <div class="row align-items-center">
-                <div class="col-lg-5 px-5 pl-lg-0 pb-5 pb-lg-0">
-                    <img class="img-fluid w-100 shadow-sm" src="img/fuyaoicon.webp" alt="">
-                </div>
-                <div class="col-lg-7 text-center text-lg-left">
-                    <div class="white-box">
-                        <h3 class="text-dark text-center font-weight-regular mb-3">宇宙无敌第一可爱的虚拟男主播</h3>
-                        <h1 class="display-3 text-center font-weight-bold text-primary mb-2">符瑶koritsu</h1>
-                        <h5 id="dynamic-text" class="text-dark text-center font-weight-regular">
-                            <div>关注符瑶烤栗子喵！谢谢喵！</div>
-                        </h5>
-                        
-                        <style>
-                            #dynamic-text {
-                                display: flex;
-                                align-items: center; 
-                                justify-content: center; 
-                                font-style: italic; 
-                                margin-top: 30px;
-                                margin-bottom: 30px;
-                                quotes: "“" "”"; 
-                            }
-                        
-                            #dynamic-text::before {
-                                content: open-quote; 
-                            }
-                        
-                            #dynamic-text::after {
-                                content: close-quote; 
-                            }
-                        </style>
-                        
-                        <script>
-                            const messages = [
-                                "关注符瑶烤栗子喵！谢谢喵！",
-                                "才不是小男娘！",
-                                "我喜欢南梁，你喜欢北朝。",
-                                "你才是男同！",
-                                "我要去找漂亮大姐姐玩了♥",
-                                "用小皮鞭狠狠抽你♥",
-                                "睡了一整天，好累哦。",
-                                "zako~~za~~ko~~♥"
-                                "符瑶直上九万里"
-                                
-                            ];
-                        
-                            function setRandomMessage() {
-                                const randomIndex = Math.floor(Math.random() * messages.length);
-                                document.getElementById('dynamic-text').innerText = messages[randomIndex];
-                            }
-                        
-                            setRandomMessage(); 
-                        </script>
-                        
-                        <div class="d-flex align-items-center justify-content-center">
-                            <a href="https://space.bilibili.com/2109776/" class="fy-button font-weight-bold" title="哔哩哔哩动画" id="Bilibili">
-                                Bilibili <img src="img/iconbili.webp">
-                            </a>
-                            <a href="https://www.youtube.com/@yaofu-yb1mx" class="fy-button font-weight-bold" title="Youtube" id="Youtube">
-                                Youtube <img src="img/iconut.webp">
-                            </a>
-                        </div>
+    <!-- 首屏 Hero -->
+    <section id="hero" class="hero-section">
+        <div class="container fade-in-up">
+            <div class="avatar-wrapper">
+                <img src="img/fuyaoicon.webp" alt="Fuyao Avatar" class="avatar">
+                <!-- 装饰圈 -->
+                <div class="avatar-ring"></div>
+            </div>
+            
+            <h1 class="site-title">符瑶koritsu</h1>
+            <p class="subtitle">宇宙无敌第一可爱虚拟男主播</p>
 
-                        <div class="d-flex align-items-center justify-content-center">    
-                            
-                            <a href="https://t.me/fuyaokoritsu/" class="fy-button-s font-weight-bold" title="Telegram非官方直播通知频道" id="Telegram">
-                                <img src="img/icontg.webp">* 
-                            </a>
-                            <a href="https://onlyfans.com/u474156005" class="fy-button-s font-weight-bold" title="OnlyFans" id="OnlyFans">
-                                <img src="img/iconof.webp">
-                            </a>
-                            <a href="https://weibo.com/u/5342789422" class="fy-button-s font-weight-bold" title="微博" id="Weibo">
-                                <img src="img/iconwb.webp">
-                            </a>
-                            <a href="https://www.douyin.com/user/MS4wLjABAAAAnLh_tIRha-i0Tcy5YOljgLM18qCVhrlQ5n4duJ1iHSw6iSCsxEtce90zLYgEd52y" class="fy-button-s font-weight-bold" title="抖音" id="Douyin">
-                                <img src="img/icondy.webp">
-                            </a>
-                            <a href="https://x.com/fuyaokoritsu" class="fy-button-s font-weight-bold" title="推特" id="Twitter">
-                                <img src="img/iconx.webp">
-                            </a>
-                        </div>
-                        
-                        
+           <!-- 两个主要社交媒体 -->
+            <div class="main-socials">
+                
+                <!-- Bilibili -->
+                <a href="https://space.bilibili.com/2109776/" target="_blank" class="social-pill bilibili">
+                    <!-- 图标：直接写入，颜色 #00aeec，大小 28px -->
+                    <svg viewBox="0 0 512 512" width="28" height="28" fill="#00aeec" style="display:block; min-width:28px; margin-right:12px;">
+                        <path fill="currentColor" d="M488.6 104.1c16.7 18.1 24.4 39.7 23.3 65.7v202.4c-.4 26.4-9.2 48.1-26.5 65.1c-17.2 17-39.1 25.9-65.5 26.7H92.02c-26.45-.8-48.21-9.8-65.28-27.2C9.682 419.4.767 396.5 0 368.2V169.8c.767-26 9.682-47.6 26.74-65.7C43.81 87.75 65.57 78.77 92.02 78h29.38L96.05 52.19c-5.75-5.73-8.63-13-8.63-21.79c0-8.8 2.88-16.06 8.63-21.797C101.8 2.868 109.1 0 117.9 0s16.1 2.868 21.9 8.603L213.1 78h88l74.5-69.397C381.7 2.868 389.2 0 398 0c8.8 0 16.1 2.868 21.9 8.603c5.7 5.737 8.6 12.997 8.6 21.797c0 8.79-2.9 16.06-8.6 21.79L394.6 78h29.3c26.4.77 48 9.75 64.7 26.1m-38.8 69.7c-.4-9.6-3.7-17.4-10.7-23.5c-5.2-6.1-14-9.4-22.7-9.8H96.05c-9.59.4-17.45 3.7-23.58 9.8c-6.14 6.1-9.4 13.9-9.78 23.5v194.4c0 9.2 3.26 17 9.78 23.5s14.38 9.8 23.58 9.8H416.4c9.2 0 17-3.3 23.3-9.8c6.3-6.5 9.7-14.3 10.1-23.5zm-264.3 42.7c6.3 6.3 9.7 14.1 10.1 23.2V273c-.4 9.2-3.7 16.9-9.8 23.2c-6.2 6.3-14 9.5-23.6 9.5c-9.6 0-17.5-3.2-23.6-9.5c-6.1-6.3-9.4-14-9.8-23.2v-33.3c.4-9.1 3.8-16.9 10.1-23.2c6.3-6.3 13.2-9.6 23.3-10c9.2.4 17 3.7 23.3 10m191.5 0c6.3 6.3 9.7 14.1 10.1 23.2V273c-.4 9.2-3.7 16.9-9.8 23.2c-6.1 6.3-14 9.5-23.6 9.5c-9.6 0-17.4-3.2-23.6-9.5c-7-6.3-9.4-14-9.7-23.2v-33.3c.3-9.1 3.7-16.9 10-23.2c6.3-6.3 14.1-9.6 23.3-10c9.2.4 17 3.7 23.3 10"></path>
+                    </svg>
+                    <div class="social-info">
+                        <span class="label">哔哩哔哩</span>
+                        <span id="fans-count">加载中...</span>
                     </div>
-                    <div class="white-box" style="margin-top: 1rem;">
-                        <div class="text-center">
-                            <div class="row bilibili-fan font-weight-bold justify-content-center">
-                                <div style="padding: 0rem 1rem">
-                                    <div class="label">当前B站订阅数</div>
-                                    <div class="count">
-                                        <span id="fans-count">加载中...</span>
-                                    </div>
-                                </div>
-                                <div style="padding: 0rem 1rem">
-                                    <div class="label">当前YouTube订阅数</div>
-                                    <div class="count">
-                                        <span id="subscribers-count">加载中...</span>
-                                    </div>
-                                </div>  
-                            </div>
-                            <div class="bilibili-fan">
-                                <a class="notice">数据每日更新</a>
-                            </div>
-                        </div>
+                </a>
+
+                <!-- YouTube -->
+                <a href="https://www.youtube.com/@yaofu-yb1mx" target="_blank" class="social-pill youtube">
+                    <!-- 图标：直接写入，颜色 #ff0000，大小 28px -->
+                    <svg viewBox="0 0 576 512" width="28" height="28" fill="#ff0000" style="display:block; min-width:28px; margin-right:12px;">
+                        <path d="M549.7 124.1c-6.3-23.7-24.8-42.3-48.3-48.6C458.8 64 288 64 288 64S117.2 64 74.6 75.5c-23.5 6.3-42 24.9-48.3 48.6-11.4 42.9-11.4 132.3-11.4 132.3s0 89.4 11.4 132.3c6.3 23.7 24.8 41.5 48.3 47.8C117.2 448 288 448 288 448s170.8 0 213.4-11.5c23.5-6.3 42-24.2 48.3-47.8 11.4-42.9 11.4-132.3 11.4-132.3s0-89.4-11.4-132.3zm-317.5 213.5V175.1l142.7 81.2-142.7 81.3z"/>
+                    </svg>
+                    <div class="social-info">
+                        <span class="label">YouTube</span>
+                        <span id="subscribers-count">加载中...</span>
                     </div>
+                </a>
+                
+            </div>
 
-                    <div class="white-box" style="margin-top: 1rem;">
-                        <div class="text-center">                            
-                            <h1 class="fy-button font-weight-bold " style="font-size: 24px" title="Hechima无双大丝瓜" id="切片">
-                            <a href="https://www.youtube.com/@WS_Hechima">☞ 直播切片配信中 ☜</a> 
-                            </h1>
-                            <div>
-                                <a>BY：Hechima无双大丝瓜</a>
-                            </div> 
-                            
+            <div class="sub-socials">
+                
+                <!-- Instagram -->
+                <a href="https://t.me/fuyaokoritsu/" class="icon-btn" title="Telegram非官方直播通知频道" id="Telegram">
+                    <svg viewBox="0 0 32 32 " width="20" height="20">
+                    <path fill="currentColor" d="M16 .5C7.437.5.5 7.438.5 16S7.438 31.5 16 31.5c8.563 0 15.5-6.938 15.5-15.5S24.562.5 16 .5m7.613 10.619l-2.544 11.988c-.188.85-.694 1.056-1.4.656l-3.875-2.856l-1.869 1.8c-.206.206-.381.381-.781.381l.275-3.944l7.181-6.488c.313-.275-.069-.431-.482-.156l-8.875 5.587l-3.825-1.194c-.831-.262-.85-.831.175-1.231l14.944-5.763c.694-.25 1.3.169 1.075 1.219z"></path>
+                    </svg>
+                </a>
+
+                <!-- onlyfans -->
+                <a href="https://onlyfans.com/u474156005/" class="icon-btn" title="OnlyFans" id="OnlyFans">
+                    <svg viewBox="0 0 24 24 " width="20" height="20">
+                    <path fill="currentColor" d="M24 4.003h-4.015c-3.45 0-5.3.197-6.748 1.957a7.996 7.996 0 1 0 2.103 9.211c3.182-.231 5.39-2.134 6.085-5.173c0 0-2.399.585-4.43 0c4.018-.777 6.333-3.037 7.005-5.995M5.61 11.999A2.391 2.391 0 0 1 9.28 9.97a2.966 2.966 0 0 1 2.998-2.528h.008c-.92 1.778-1.407 3.352-1.998 5.263A2.392 2.392 0 0 1 5.61 12Zm2.386-7.996a7.996 7.996 0 1 0 7.996 7.996a7.996 7.996 0 0 0-7.996-7.996m0 10.394A2.399 2.399 0 1 1 10.395 12a2.396 2.396 0 0 1-2.399 2.398Z">
+                </svg>
+                </a>
+
+                 <!-- weibo -->
+                <a href="https://weibo.com/u/5342789422/" class="icon-btn" title="微博" id="Weibo">
+                    <svg viewBox="0 0 512 512 " width="20" height="20">
+                    <path fill="currentColor" d="M407 177.6c7.6-24-13.4-46.8-37.4-41.7c-22 4.8-28.8-28.1-7.1-32.8c50.1-10.9 92.3 37.1 76.5 84.8c-6.8 21.2-38.8 10.8-32-10.3M214.8 446.7C108.5 446.7 0 395.3 0 310.4c0-44.3 28-95.4 76.3-143.7C176 67 279.5 65.8 249.9 161c-4 13.1 12.3 5.7 12.3 6c79.5-33.6 140.5-16.8 114 51.4c-3.7 9.4 1.1 10.9 8.3 13.1c135.7 42.3 34.8 215.2-169.7 215.2m143.7-146.3c-5.4-55.7-78.5-94-163.4-85.7c-84.8 8.6-148.8 60.3-143.4 116s78.5 94 163.4 85.7c84.8-8.6 148.8-60.3 143.4-116M347.9 35.1c-25.9 5.6-16.8 43.7 8.3 38.3c72.3-15.2 134.8 52.8 111.7 124c-7.4 24.2 29.1 37 37.4 12c31.9-99.8-55.1-195.9-157.4-174.3m-78.5 311c-17.1 38.8-66.8 60-109.1 46.3c-40.8-13.1-58-53.4-40.3-89.7c17.7-35.4 63.1-55.4 103.4-45.1c42 10.8 63.1 50.2 46 88.5m-86.3-30c-12.9-5.4-30 .3-38 12.9c-8.3 12.9-4.3 28 8.6 34c13.1 6 30.8.3 39.1-12.9c8-13.1 3.7-28.3-9.7-34m32.6-13.4c-5.1-1.7-11.4.6-14.3 5.4c-2.9 5.1-1.4 10.6 3.7 12.9c5.1 2 11.7-.3 14.6-5.4c2.8-5.2 1.1-10.9-4-12.9">
+                </svg>
+                </a>
+
+                 <!-- douyin -->
+                <a href="https://www.douyin.com/user/MS4wLjABAAAAnLh_tIRha-i0Tcy5YOljgLM18qCVhrlQ5n4duJ1iHSw6iSCsxEtce90zLYgEd52y" class="icon-btn" title="抖音" id="Douyin">
+                    <svg viewBox="0 0 24 24 " width="20" height="20">
+                    <path fill="currentColor" d="M19.321 5.562a5.124 5.124 0 0 1-.443-.258a6.228 6.228 0 0 1-1.137-.966c-.849-.971-1.166-1.956-1.282-2.645h.004c-.097-.573-.057-.943-.05-.943h-3.865v14.943c0 .2 0 .399-.008.595c0 .024-.003.046-.004.073c0 .01 0 .022-.003.033v.009a3.28 3.28 0 0 1-1.65 2.604a3.226 3.226 0 0 1-1.6.422c-1.8 0-3.26-1.468-3.26-3.281c0-1.814 1.46-3.282 3.26-3.282c.341 0 .68.054 1.004.16l.005-3.936a7.178 7.178 0 0 0-5.532 1.62a7.583 7.583 0 0 0-1.655 2.04c-.163.281-.779 1.412-.853 3.246c-.047 1.04.266 2.12.415 2.565v.01c.093.262.457 1.158 1.049 1.913a7.856 7.856 0 0 0 1.674 1.58v-.01l.009.01c1.87 1.27 3.945 1.187 3.945 1.187c.359-.015 1.562 0 2.928-.647c1.515-.718 2.377-1.787 2.377-1.787a7.43 7.43 0 0 0 1.296-2.153c.35-.92.466-2.022.466-2.462V8.273c.047.028.672.441.672.441s.9.577 2.303.952c1.006.267 2.363.324 2.363.324V6.153c-.475.052-1.44-.098-2.429-.59">
+                </svg>
+                </a>
+
+                 <!-- X -->
+                <a href="https://x.com/fuyaokoritsu" class="icon-btn" title="X (Twitter)" id="X (Twitter)">
+                    <svg viewBox="0 0 24 24 " width="20" height="20">
+                    <path fill="currentColor" d="M18.205 2.25h3.308l-7.227 8.26l8.502 11.24H16.13l-5.214-6.817L4.95 21.75H1.64l7.73-8.835L1.215 2.25H8.04l4.713 6.231zm-1.161 17.52h1.833L7.045 4.126H5.078z">
+                </svg>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 关于区域 -->
+    <section id="about" class="section-padding">
+        <div class="container about-layout">
+            <div class="about-img-box">
+                <img src="img/fuyao.webp" alt="About Fuyao">
+                <div class="img-backdrop"></div>
+            </div>
+            <div class="about-content">
+                <span class="section-tag">About</span>
+                <h2>符瑶的自我介绍</h2>
+                <p class="description">
+                    大家好，这里是符瑶koritsu，可以叫我符瑶也可以叫我烤栗子，甚至是少爷！
+                     <br><br>
+                    喜欢打游戏，唱歌，出cos！
+                     <br><br>
+                    cos是爱好，女装是兴趣！取向是大姐姐！
+                     <br><br>
+                    是个臭打游戏的死宅，喜欢和大家一起玩！
+                </p>
+                 <div class="friend-links">
+                    <a href="https://zh.moegirl.org.cn/zh-hans/%E7%AC%A6%E7%91%B6koritsu" target="_blank" class="link-card">
+                        <img src="img/fuyaoQQ.webp" alt="萌娘百科">
+                        <div class="link-info">
+                            <h4>萌娘百科</h4>
+                            <p>查看更详细的设定</p>
                         </div>
-                    </div>
-
-                </div>
-               
-
+                    </a>
+                    <a href="http://qm.qq.com/cgi-bin/qm/qr?..." target="_blank" class="link-card">
+                        <img src="img/fyqq.webp" alt="QQ群">
+                        <div class="link-info">
+                            <h4>QQ粉丝群</h4>
+                            <p>加入我们</p>
+                        </div>
+                    </a>
+                    <a href="https://space.bilibili.com/3309149" target="_blank" class="link-card">
+                        <img src="img/kuru.webp" alt="库鲁">
+                        <div class="link-info">
+                            <h4>库鲁Kuru</h4>
+                            <p>符瑶的主人(?)</p>
+                        </div>
+                    </a>
                 </div>
             </div>
-        
-    
-            <script>
-                function formatToWan(number) {
-                    if (number >= 10000) {
-                        return (number / 10000).toFixed(2) + 'w';
-                    }
-                    return number; // 如果小于一万，直接返回原始值
-                }
             
-                async function fetchFansCount() {
-                    try {
-                        const response = await fetch('https://oksqhy.github.io/fuyao.github.io/bilibili-stats.json');
-                        if (!response.ok) {
-                            throw new Error(`HTTP error! status: ${response.status}`);
-                        }
-                        const data = await response.json();
-                        console.log(data);
-            
-                        // 获取粉丝数
-                        const fansCount = data.follower;
-            
-                        // 格式化
-                        const formattedFansCount = formatToWan(fansCount);
-            
-                        // 更新 HTML 元素
-                        document.getElementById('fans-count').innerText = formattedFansCount;
-                    } 
-                    catch (error) {
-                        console.error('获取 B站 粉丝数失败:', error);
-                        document.getElementById('fans-count').innerText = '获取失败';
-                    }
-                }
-                fetchFansCount();
-            
-                async function fetchSubscribersCount() {
-                    try {
-                        const response = await fetch('https://oksqhy.github.io/fuyao.github.io/youtube-stats.json');
-                        if (!response.ok) {
-                            throw new Error(`HTTP error! status: ${response.status}`);
-                        }
-                        const data = await response.json();
-                        console.log(data);
-            
-                        // 获取订阅数
-                        const subscribersCount = data.subscribers;
-            
-                        // 格式化
-                        const formattedSubscribersCount = formatToWan(subscribersCount);
-            
-                        // 更新 HTML 元素
-                        document.getElementById('subscribers-count').innerText = formattedSubscribersCount;
-                    } 
-                    catch (error) {
-                        console.error('获取 YouTube 订阅数失败:', error);
-                        document.getElementById('subscribers-count').innerText = '获取失败';
-                    }
-                }
-                fetchSubscribersCount();
-            </script>
-            
-            
-        
         </div>
-    </div>
-   
+    </section>
 
-<!-- About Start -->
-    <div class="container-fluid" id="About">
+    <!-- 新增：主页博客展示 -->
+    <section id="blog-preview" class="section-padding bg-pale">
         <div class="container">
-            <div class="position-relative d-flex align-items-center justify-content-center">
-                <h1 class="display-1 font-weight-bold text-primary mb-2" >符瑶的自我介绍</h1>
+            <div class="section-header text-center">
+                <span class="section-tag">Secret</span>
+                <h2>符瑶的小秘密</h2>
             </div>
-            <div class="row align-items-center">
-                <div class="col-lg-5 pb-4 pb-lg-2">
-                    <img class="img-fluid rounded w-100" src="img/fuyao.webp" alt="">
+            
+            <div class="blog-grid">
+                <!-- 文章卡片 1 -->
+                <article class="blog-card">
+                    <div class="card-date">
+                        <span class="day">05 Feb</span>
+                        <span class="month">2025</span>
+                    </div>
+                    <div class="card-content">
+                        <h3><a href="blog_gender.html">符瑶的性别？中之人？</a></h3>
+                        <p>符瑶究竟是男生还是女生？符瑶本人长什么样呢？喜欢男孩子还是女孩子呢？</p>
+                        <a href="blog_gender.html" class="read-more">想知道吗？点击这里！<i class="fas fa-long-arrow-alt-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- 文章卡片 2 -->
+                <article class="blog-card">
+                    <div class="card-date">
+                        <span class="day">07 Apr</span>
+                        <span class="month">2025</span>
+                    </div>
+                    <div class="card-content">
+                        <h3><a href="blog_metro.html">符瑶的地铁评测：为何越挤越兴奋？</a></h3>
+                        <p>不会吧？不会吧？不会真的有人喜欢挤地铁吧？在上班路上，符瑶像沙丁鱼一样被挤进钢铁制造的列车车厢内，在人群中被压得透不过气，却意外感觉很舒服？</p>
+                        <a href="blog_metro.html" class="read-more">点击挤爆符瑶！    <i class="fas fa-long-arrow-alt-right"></i></a>
+                    </div>
+                </article>
+            <!--
+             <div class="center-btn">
+                <a href="blog.html" class="btn-outline">查看更多文章</a>
+            </div>
+            -->
+        </div>
+    </section>
+
+    <!-- 橱窗区域 -->
+    <section id="showcase" class="section-padding">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-tag">Gallery</span>
+                <h2>符瑶的衣柜</h2>
+            </div>
+            
+            <div class="gallery-grid">
+                <!-- 形象 1 -->
+                <div class="model-card">
+                    <div class="model-img">
+                        <img src="img/character5.webp" alt="Model 1">
+                    </div>
+                    <div class="model-info">
+                        <h4>符瑶koritsu</h4>
+                        <p class="credit">最初的皮肤，梦开始的地方。<br>画师：@相良sei | 建模：@狐莵子</p>
+                    </div>
                 </div>
-                <div class="col-lg-7">
-                    <h1 class="mb-4 font-weight-bold">符瑶koritsu</h1>
-                    <p class="font-weight-regular">这里是符瑶烤栗子，你们滴符宝!!!素白云的百变怪捏!</p>
-                    <p class="font-weight-regular">喜欢的干的事：睡觉 / 摸鱼 / 打游戏 / 看番 / 吃好吃的/ 看美少女……</p>
-                    <p class="font-weight-regular">直播内容：打游戏/杂谈唠嗑/摸鱼练习学习/唱一点都不好听的歌。（P.S.最近新增加了夜场ASMR直播。）</p>
-                    <p class="font-weight-regular"> 直播时间：不狗带都播 工作日：19：00-12：00 其余时间随机掉落。</p>
-                    <p class="font-weight-regular">二创tag没弄，能二创都是我再生父母!  总而言之，现在这是一只爱打游戏的懒狗☁️！让我们一起努力的生活吧！</p>
-                    <div class="about-container">
-                        <div class="image-container">
-                        <a href="https://zh.moegirl.org.cn/zh-hans/%E7%AC%A6%E7%91%B6koritsu" target="_blank">
-                            <img src="img/fuyaoQQ.webp" alt="image">
-                            <div class="text-box">萌娘百科</div>
-                        </a>
-                        </div>
-                        <div class="image-container">
-                        <a href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=gd8CUftkf4PyfkYKYdLeHAghuPZYxEP2&authKey=Y8USi2DOaRX99Ea6ZYxxnQWi7QJFRdmRX2Gn%2Byu4PUNfoDGupXAbRnabspUY5GML&noverify=0&group_code=681067946" target="_blank">
-                            <img src="img/fyqq.webp" alt="image">
-                            <div class="text-box">QQ粉丝群</div>
-                        </a>
-                        </div>
+                <!-- 形象 2 -->
+                <div class="model-card">
+                    <div class="model-img">
+                        <img src="img/character4.webp" alt="Model 2">
+                    </div>
+                    <div class="model-info">
+                        <h4>符瑶1.0</h4>
+                        <p class="credit">纯洁的女仆狗狗，本体是白云。启用于2022年6月1日生日回。<br>画师：@相良sei | 建模：@狐莵子</p>
+                    </div>
+                </div>
+                <!-- 形象 3 -->
+                <div class="model-card">
+                    <div class="model-img">
+                        <img src="img/character3.png" alt="Model 3">
+                    </div>
+                    <div class="model-info">
+                        <h4>符瑶2.0</h4>
+                        <p class="credit">触手萝莉，正式雌堕的里程碑。启用于2022年6月1日，由于原先的设计无法过审核，此版经过补全加修改<br>画师：@相良sei | 建模：@狐莵子</p>
+                    </div>
+                </div>
+                <!-- 形象 DLC -->
+                <div class="model-card">
+                    <div class="model-img">
+                        <img src="img/character2.png" alt="Model 3">
+                    </div>
+                    <div class="model-info">
+                        <h4>鲨鱼狗狗</h4>
+                        <p class="credit">可爱的鲨鱼狗狗，符瑶的Q版形象，简称鲨狗。启用于2023年8月30日20w纪念回。<br>画师：@月兔弥生</p>
+                    </div>
+                </div>
+                <!-- 形象 3 -->
+                <div class="model-card">
+                    <div class="model-img">
+                        <img src="img/character1.webp" alt="Model 3">
+                    </div>
+                    <div class="model-info">
+                        <h4>符瑶3.0</h4>
+                        <p class="credit">军装符瑶，成熟温柔的大狗狗。启用于2024年1月30日生日纪念回。<br>画师：@相良sei | 建模：@狐莵子</p>
+                    </div>
+                </div>
+                <!-- 形象 4 -->
+                <div class="model-card">
+                    <div class="model-img">
+                        <img src="img/character6.webp" alt="Model 3">
+                    </div>
+                    <div class="model-info">
+                        <h4>符瑶4.0</h4>
+                        <p class="credit">符瑶的修女形象。首次采用四分之三视图。启用于2025年2月4日生日纪念回。<br>画师：@相良sei | 建模：@狐莵子</p>
+                    </div>
+                </div>
+                <!-- 形象 4DLC -->
+                <div class="model-card">
+                    <div class="model-img">
+                        <img src="img/character7.webp" alt="Model 3">
+                    </div>
+                    <div class="model-info">
+                        <h4>符瑶4.0DLC</h4>
+                        <p class="credit">修女形象的居家服版本。启用于2025年10月31日。<br>画师：@相良sei | 建模：@EKISA</p>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div class="container-fluid about-section-bg" id="Anecdotes">
-        <div class="container">
-            <div class="position-relative d-flex align-items-center justify-content-center">
-                <h1 class="display-1 font-weight-bold text-primary">符瑶的性别？中之人？</h1>
-            </div>
-            <div class="row align-items-center about-section">
-                <div class="col-lg-7 order-2 order-lg-1">
-                    <p class="font-weight-regular" style="font-size: 20px">符瑶究竟是男生还是女生？</p>
-                    <p class="font-weight-regular" style="font-size: 20px">符瑶本人长什么样呢？</p>
-                    <p class="font-weight-regular" style="font-size: 20px">喜欢男孩子还是女孩子呢？</p>
-                    <p class="fy-button" style="font-size: 32px" src="img/deepfuyao.webp"><a href="gender.html">☞☞☞ 想知道吗？点击这里！☜☜☜</a></p>
-                </div>
-                <div class="col-lg-5 pb-4 pb-lg-2">
-                    <img class="img-fluid rounded w-100" src="img/deepfuyao.webp" alt="">
-                </div>
-               
-            </div>
-        </div>
-    </div> 
-
-    <div class="container-fluid" id="metro" style="padding: 2rem 1rem;">
-        <div class="container">
-            <div class="position-relative d-flex align-items-center justify-content-center">
-                <h1 class="display-1 font-weight-bold text-primary" >符瑶的地铁评测</h1>
-            </div>
-            <div class="row align-items-center">
-                <div class="col-lg-5 pb-4 pb-lg-2">
-                    <img class="img-fluid rounded w-100" src="img/fymetro.webp" style="padding: 20px;" alt="">
-                </div>
-                <div class="col-lg-7">
-                    <p class="font-weight-regular" style="font-size: 20px">不会吧？不会吧？</p>
-                    <p class="font-weight-regular" style="font-size: 20px">不会真的有人喜欢挤地铁吧？</p>
-                    <p class="font-weight-regular" style="font-size: 20px">在上班路上，符瑶像沙丁鱼一样被挤进钢铁制造的列车车厢内，在人群中被压得透不过气，却意外感觉很舒服？</p>
-                    <p class="fy-button" style="font-size: 20px" src="img/deepfuyao.webp"><a href="metro.html">☞☞☞ 点击挤爆符瑶 ☜☜☜</a></p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    
- <!-- About End -->
-
-<!-- gallery start -->
-<div class="fy-gallery">
-    <h1 class="display-1 font-weight-bold text-secondary">符瑶的衣柜</h1>
-    
-    <div class="grid-container">
-     <div>
-        <img class='grid-item grid-item-1' src='img/character7.webp' alt=''>
-        <p class="character-name font-weight-blod">符瑶4.0DLC</p>
-        <p class="character-desc">修女形象的居家服版本。启用于2025年10月31日。模型：EKISA</p>
-    </div>
-        <div>
-        <img class='grid-item grid-item-1' src='img/character6.webp' alt=''>
-        <p class="character-name font-weight-blod">符瑶4.0</p>
-        <p class="character-desc">符瑶的修女形象。首次采用四分之三视图。启用于2025年2月4日生日纪念回。</p>
-    </div>
-    <div>
-        <img class='grid-item grid-item-1' src='img/character1.webp' alt=''>
-        <p class="character-name font-weight-blod">符瑶3.0</p>
-        <p class="character-desc">军装符瑶，成熟温柔的大狗狗。启用于2024年1月30日生日纪念回。</p>
-    </div>
-    <div>
-        <img class='grid-item grid-item-2' src='img/character2.webp' alt=''>
-        <p class="character-name font-weight-blod">鲨鱼狗狗</p>
-        <p class="character-desc">可爱的鲨鱼狗狗，符瑶的Q版形象，<span class="strikethrough">简称鲨狗。</span>启用于2023年8月30日20w纪念回。</p>
-    </div>
-    <div>
-        <img class='grid-item grid-item-3' src='img/character3.webp' alt=''>
-        <p class="character-name font-weight-blod">符瑶2.0</p>
-        <p class="character-desc">触手萝莉，<span class="strikethrough">正式雌堕的里程碑。</span>启用于2022年6月1日，由于原先的设计无法过审核，此版经过补全加修改。</p>
-    </div>
-    <div>
-        <img class='grid-item grid-item-4' src='img/character4.webp' alt=''>
-        <p class="character-name font-weight-blod">符瑶1.0</p>
-        <p class="character-desc">纯洁的女仆狗狗，本体是白云。启用于2022年6月1日生日回。</p>
-    </div>
-    <div>
-        <img class='grid-item grid-item-5' src='img/character5.webp' alt=''>
-        <p class="character-name font-weight-blod">符瑶koritsu </p>
-        <p class="character-desc">最初的皮肤，梦开始的地方。</p>
-    </div>
-    </div>
-
-    <div class="container text-white text-center">
-            <p>画师：相良sei</p> 
-            <p>模型：狐莵子</p> 
-            <p>鲨鱼狗狗形象：月兔弥生</p> 
-    </div>
-</div>
-
-<!-- gallery end -->
-<!-- web-notice end -->
-<div class="container-fluid about-section-bg" id="web-notice">
+   <footer class="site-footer">
     <div class="container">
-        <div class="row about-section">
-            <div class="col-lg-12">
-                <h3 class="mb-4 font-weight-blod">关于本站&声明：</h3>
-                <p class="font-weight-regular">本站是由符导员创建的符瑶koritsu应援站，属于对符瑶koritsu形象的二次创作，内容不代表符瑶koritsu本人立场。符瑶koritsu的虚拟形象与相关图片的版权归符瑶本人和其他相关创作者所有。</p>
-                <p class="font-weight-regular">本站遵循CC BY-NC-SA（署名-非商业性使用-相同方式共享）协议。在署名原作者且遵循相同协议的情况下，可以非商业性的使用。</p>
-                <p class="font-weight-regular">本站由Github Pages + Vercel托管。如果你希望共同参与网站内容的构建和维护，请联系站长<a class="text-dark" href= "https://space.bilibili.com/258789825">@Hechiam无双大丝瓜</a> 。</p> 
-                <p class="font-weight-regular">*Telegram非官方直播通知频道</p>
+        <div class="footer-grid">
+            <!-- 左侧：品牌与声明 -->
+            <div class="footer-brand">
+                <div class="footer-logo">符瑶烤栗子 ☁ 烧烤摊 </div>
+                <p class="footer-desc">
+                    本站为 <strong style="color: var(--accent-deep);">符瑶Koritsu</strong> 的非官方应援站。
+                </p>
+                <p class="license-text">
+                    内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">CC BY-NC-SA 4.0</a> 协议。<br>
+                    Designed by Hechima & Gemini 3 | Powered by GitHub Pages
+                </p>
             </div>
-            <div class="color-palette">
-                <div class="color-box" style="background-color: #2e224a">
-                    <span>#2E224A</span>
+
+            <!-- 中间：运行时间与链接 -->
+            <div class="footer-links">
+                <h4 class="footer-heading">Station Status</h4>
+                <div class="runtime-display">
+                    <div id="uptime">本站已运行:<br> <span id="time">0天 0小时 0分钟 0秒</span> </div>
+                    <script>
+                        window.onload = function () {
+                        // 设置网站开设的日期 (格式：年-月-日)
+                        var websiteStartDate = new Date('2024-10-13T12:03:00'); // 例如，2023年1月1日
+                    
+                        function updateTime() {
+                            var now = new Date(); // 当前时间
+                            var elapsedTime = now - websiteStartDate; // 计算从网站开设到当前经过的时间
+                    
+                            var days = Math.floor(elapsedTime / (1000 * 60 * 60 * 24)); // 天数
+                            var hours = Math.floor((elapsedTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)); // 小时
+                            var minutes = Math.floor((elapsedTime % (1000 * 60 * 60)) / (1000 * 60)); // 分钟
+                            var seconds = Math.floor((elapsedTime % (1000 * 60)) / 1000); // 秒
+                    
+                            // 更新页面显示
+                            document.getElementById('time').innerText = days + "天 " + hours + "小时 " + minutes + "分钟 " + seconds + "秒";
+                        }
+                    
+                        // 每秒更新一次时间
+                        setInterval(updateTime, 1000);
+                        };
+                    </script>
                 </div>
-                <div class="color-box" style="background-color: #493573;">
-                    <span>#493573</span>
-                </div>
-                <div class="color-box" style="background-color: #f3e5f5;">
-                    <span>#F3E5F5</span>
-                </div>
-                <div class="color-box" style="background-color: #ff5722;">
-                    <span>#FF5722</span>
+                <ul class="link-list">
+                    <li><a href="https://icp.gov.moe/?keyword=20250130" target="_blank" style="color: rgb(0, 0, 0) !important;">萌ICP备20250130号</a></li>
+                </ul>
+            </div>
+
+            <!-- 右侧：本站配色卡 (真实提取自 CSS) -->
+            <div class="footer-colors">
+                <h4 class="footer-heading">Theme Palette</h4>
+                <div class="palette-grid">
+                    <!-- 1. 深紫文字色 -->
+                    <div class="color-dot-wrapper">
+                        <div class="color-dot" style="background: #6a4c93;"></div>
+                        <span class="color-code">#6a4c93</span>
+                    </div>
+                    <!-- 2. 主题强调色 -->
+                    <div class="color-dot-wrapper">
+                        <div class="color-dot" style="background: #9d84b7;"></div>
+                        <span class="color-code">#9d84b7</span>
+                    </div>
+                    <!-- 3. 氛围光斑色 -->
+                    <div class="color-dot-wrapper">
+                        <div class="color-dot" style="background: #e0c3fc;"></div>
+                        <span class="color-code">#e0c3fc</span>
+                    </div>
+                    <!-- 4. 极淡背景色 -->
+                    <div class="color-dot-wrapper">
+                        <div class="color-dot" style="background: #f9f7fc; border: 1px solid #eee;"></div>
+                        <span class="color-code">#f9f7fc</span>
+                    </div>
+
+                    <div class="color-dot-wrapper">
+                        <div class="color-dot" style="background: #493573;"></div>
+                        <span class="color-code">#493573</span>
+                    </div>
                 </div>
             </div>
-        </div>        
-    </div>
-</div>
-<!-- web-notice end -->
-<!-- Footer Start -->
-
-    <div class="container-fluid bg-footer text-white px-sm-3">
-        <div class="container text-center py-5">
-        <div id="uptime">本站已运行: <span id="time">0天 0小时 0分钟 0秒</span>
         </div>
-        <script>
-            window.onload = function () {
-              // 设置网站开设的日期 (格式：年-月-日)
-              var websiteStartDate = new Date('2024-10-13T12:03:00'); // 例如，2023年1月1日
-          
-              function updateTime() {
-                var now = new Date(); // 当前时间
-                var elapsedTime = now - websiteStartDate; // 计算从网站开设到当前经过的时间
-          
-                var days = Math.floor(elapsedTime / (1000 * 60 * 60 * 24)); // 天数
-                var hours = Math.floor((elapsedTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)); // 小时
-                var minutes = Math.floor((elapsedTime % (1000 * 60 * 60)) / (1000 * 60)); // 分钟
-                var seconds = Math.floor((elapsedTime % (1000 * 60)) / 1000); // 秒
-          
-                // 更新页面显示
-                document.getElementById('time').innerText = days + "天 " + hours + "小时 " + minutes + "分钟 " + seconds + "秒";
-              }
-          
-              // 每秒更新一次时间
-              setInterval(updateTime, 1000);
-            };
-          </script>
 
-    
-          
-        <p class="font-weight-light" style="display: inline; margin: 0;"> 
-            <a href="https://icp.gov.moe/?keyword=20250130" target="_blank" style="color: white !important;">萌ICP备20250130号</a>
-            <a style="text-decoration:none;color:#51c4d3;" href="https://travel.moe/go.html" title="异次元之旅-跃迁-我们一起去萌站成员的星球旅行吧！" target="_blank">异次元之旅</a>
-        </p>
-        <p class="m-0" style="display: inline; margin-left: 10px;">&copy; 
-            <a class="text-white font-weight-bold" href="https://368326.xyz">Hechima的后花园</a>
-            <a href="https://github.com/oksqhy" target="_blank">
-                <img src="img/github-mark-white.png" width="16px" height="16px">
-            </a>
-        </p>
+        <!-- 底部版权行 -->
+        <div class="footer-copyright">
+            &copy;Hechima的后花园. All Rights Reserved.
         </div>
     </div>
-    <!-- Footer End -->
+</footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
