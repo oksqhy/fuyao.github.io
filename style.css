@@ -80,11 +80,36 @@ body {
     padding: 0 25px;
 }
 
-.logo {
-    font-size: 1.4rem;
-    font-weight: bold;
-    color: var(--accent-deep);
-    letter-spacing: 1px;
+/* --- 导航栏 Logo 图片适配 --- */
+
+.logo-img-wrapper {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    /* 移除之前的文字颜色设置，因为现在是图片 */
+}
+
+.logo-gif {
+    /* 限制高度，确保导航栏不会变得巨宽 */
+    height: 60px; 
+    width: auto; /* 宽度自适应保持比例 */
+    
+    /* 如果你的GIF没有圆角，想要加一点圆角可以保留下面这行 */
+    border-radius: 6px; 
+    
+    /* 简单的悬停效果 */
+    transition: transform 0.3s ease;
+}
+
+.logo-img-wrapper:hover .logo-gif {
+    transform: scale(1.05); /* 鼠标放上去稍微放大 */
+}
+
+/* 移动端适配：手机上 Logo 稍微小一点 */
+@media (max-width: 768px) {
+    .logo-gif {
+        height: 50px;
+    }
 }
 
 nav a {
